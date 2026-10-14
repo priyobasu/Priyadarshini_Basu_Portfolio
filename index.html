@@ -1,0 +1,1719 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Priyadarshini Basu — Executive Portfolio</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Poppins & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Yellow Tech / Interactive Syntax Palette Mapping -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        alphagen: {
+                            purple: '#1E1F1A',          /* Mapped to deep charcoal */
+                            purpleDark: '#1E1F1A',      /* Dark charcoal header & primary blocks */
+                            purpleMid: '#32332B',       /* Muted olive charcoal borders */
+                            purplePale: '#FFE79A',      /* Soft Butter Yellow highlights */
+                            purpleGhost: '#F7F6EE',     /* Soft tinted warm surface */
+                            yellow: '#FFDE4D',          /* Vibrant Cyber Yellow */
+                            yellowDark: '#1E1F1A',      /* Deep charcoal text */
+                            yellowPale: '#FFE79A',      /* Soft Butter Yellow */
+                            nearBlack: '#1E1F1A',       /* Deep charcoal primary text */
+                            darkGrey: '#32332B',        /* Charcoal secondary body */
+                            midGrey: '#6C6D63',         /* Muted olive gray captions */
+                            lightGrey: '#F4F3ED',       /* Clean warm neutral cards */
+                            cyan: '#E1FF00',            /* Electric Neon Lime */
+                            cyanDark: '#1E1F1A',        /* Dark charcoal */
+                            cyanPale: '#F5FCC2',        /* Pale neon lime tint */
+                            coral: '#FFDE4D',           /* High-voltage cyber yellow */
+                            coralDark: '#1E1F1A',
+                            coralPale: '#FFE79A'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* --------------------------------------------------
+           YELLOW TECH / INTERACTIVE SYNTAX ROOT VARIABLES
+           -------------------------------------------------- */
+        :root {
+            --bg-primary: #FCFBF7;       /* Soft Warm Cream Canvas */
+            --bg-dark-accent: #1E1F1A;   /* Deep Charcoal for crisp headers/containers */
+            --bg-dark-muted: #32332B;    /* Muted Olive Charcoal for layout borders */
+            --text-main: #1E1F1A;        /* Deep main text color */
+            --text-light: #FCFBF7;       /* High-contrast light text */
+            --accent-cyber: #FFDE4D;     /* Vibrant Cyber Yellow (Primary branding/buttons) */
+            --accent-butter: #FFE79A;    /* Soft Butter Yellow (Secondary hover/highlights) */
+            --accent-neon: #E1FF00;      /* Electric Neon Lime (Tech tags/badges/code fonts) */
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-primary) !important;
+            color: var(--text-main) !important;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Typography & Headers */
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--text-main);
+        }
+
+        /* Cyber Yellow Inline Highlight Accent */
+        .spark-highlight {
+            position: relative;
+            display: inline-block;
+        }
+        .spark-highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 0;
+            width: 100%;
+            height: 9px;
+            background-color: var(--accent-cyber);
+            z-index: 0;
+            opacity: 0.95;
+            border-radius: 3px;
+        }
+        .spark-highlight span {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Cards & Section Containers: Crisp borders, 0.2s transition, butter-yellow hover glow */
+        section.bg-white,
+        div.bg-white {
+            background-color: #FFFFFF !important;
+            border-color: var(--bg-dark-muted) !important;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+        section.bg-white:hover,
+        .grid > div.bg-white:hover {
+            border-color: var(--bg-dark-accent) !important;
+            box-shadow: 0 8px 24px -4px rgba(255, 231, 154, 0.6), 0 0 0 1px var(--accent-cyber);
+        }
+
+        /* Media Frame Styling */
+        .media-frame {
+            background-color: #FFFFFF;
+            border: 1px solid var(--bg-dark-muted) !important;
+            border-radius: 14px;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.2s ease;
+        }
+        .media-frame:hover {
+            border-color: var(--accent-cyber) !important;
+            box-shadow: 0 0 0 2px var(--accent-cyber);
+        }
+
+        /* Call-To-Action Buttons: Solid Cyber Yellow, Thick Dark Borders, Scales to Butter Yellow */
+        a[href^="mailto:"],
+        .pt-3 a[target="_blank"] {
+            background-color: var(--accent-cyber) !important;
+            color: var(--bg-dark-accent) !important;
+            border: 2px solid var(--bg-dark-accent) !important;
+            font-weight: 700 !important;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        }
+        a[href^="mailto:"]:hover,
+        .pt-3 a[target="_blank"]:hover {
+            background-color: var(--accent-butter) !important;
+            transform: scale(1.04);
+            box-shadow: 0 6px 18px rgba(255, 222, 77, 0.55);
+        }
+
+        /* Top Sticky Navigation Bar */
+        header {
+            background-color: rgba(30, 31, 26, 0.97) !important;
+            border-bottom: 2px solid var(--bg-dark-muted) !important;
+        }
+        header nav a {
+            transition: color 0.2s ease;
+        }
+        header nav a:hover {
+            color: var(--accent-cyber) !important;
+        }
+
+        /* Skill Tags, Badges & Mini Terminal Pills */
+        .tbe-tag,
+        span.inline-flex,
+        span[class*="bg-alphagen-cyanPale"],
+        span[class*="bg-alphagen-purplePale"],
+        span[class*="bg-alphagen-purpleGhost"] {
+            background-color: var(--bg-dark-accent) !important;
+            color: var(--accent-neon) !important;
+            border: 1px solid var(--bg-dark-muted) !important;
+            font-family: 'JetBrains Mono', ui-monospace, monospace !important;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+        }
+
+        /* Carousel Track & Controls */
+        .carousel-track {
+            display: flex;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        #certifications-carousel button,
+        #endorsements button {
+            border: 1px solid var(--bg-dark-muted);
+            transition: all 0.2s ease;
+        }
+        #certifications-carousel button:hover,
+        #endorsements button:hover {
+            background-color: var(--accent-cyber) !important;
+            color: var(--bg-dark-accent) !important;
+            border-color: var(--bg-dark-accent) !important;
+        }
+
+        /* Zoomable Images */
+        .zoomable-image {
+            cursor: zoom-in;
+            transition: transform 0.25s ease, filter 0.25s ease;
+        }
+        .zoomable-image:hover {
+            transform: scale(1.025);
+            filter: contrast(1.03);
+        }
+
+        /* Lightbox Overlay */
+        #image-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgba(30, 31, 26, 0.92);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+        }
+        #image-modal.active {
+            display: flex;
+        }
+
+        /* Core Strategic Offerings Section */
+        section.bg-alphagen-purple {
+            background-color: var(--bg-dark-accent) !important;
+            border: 2px solid var(--bg-dark-muted) !important;
+        }
+        section.bg-alphagen-purple .bg-white {
+            border: 1px solid var(--bg-dark-muted) !important;
+        }
+        section.bg-alphagen-purple .bg-white:hover {
+            border-color: var(--accent-cyber) !important;
+            box-shadow: 0 6px 20px rgba(255, 231, 154, 0.4);
+        }
+
+        /* Print formatting */
+        @media print {
+            .no-print { display: none !important; }
+            body { background: #fff !important; }
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+
+    <!-- Lightbox Modal for Enlargeable Images -->
+    <div id="image-modal" onclick="closeImageModal()">
+        <div class="relative max-w-5xl max-h-[92vh] flex flex-col items-center p-2" onclick="event.stopPropagation()">
+            <button onclick="closeImageModal()" class="absolute -top-10 right-0 text-white hover:text-alphagen-yellow text-xl font-bold transition flex items-center gap-1">
+                <span>Close</span> <i class="fa-solid fa-xmark"></i>
+            </button>
+            <img id="modal-img" src="" alt="Enlarged Preview" class="max-w-full max-h-[82vh] object-contain rounded-xl shadow-2xl bg-white border border-white/20" />
+            <p id="modal-caption" class="text-white text-xs md:text-sm font-semibold mt-3 text-center tracking-wide bg-black/60 px-4 py-1.5 rounded-full"></p>
+        </div>
+    </div>
+
+    <!-- Top Sticky Executive Navigation Bar -->
+    <header class="no-print sticky top-0 z-50 bg-alphagen-purpleDark/95 backdrop-blur-md border-b border-white/10 px-5 py-3 shadow-lg">
+        <div class="max-w-6xl mx-auto flex items-center justify-between">
+            <div>
+                <h1 class="text-white font-bold text-sm md:text-base tracking-tight leading-none">
+                    Priyadarshini Basu
+                </h1>
+               
+            </div>
+
+            <!-- Quick Jump Anchor Links -->
+            <nav class="hidden md:flex items-center gap-5 text-xs font-semibold text-white/85">
+                <a href="#vision" class="hover:text-alphagen-yellow transition">Vision</a>
+                <a href="#academic" class="hover:text-alphagen-yellow transition">Academics</a>
+                <a href="#certifications-carousel" class="hover:text-alphagen-yellow transition">Certifications</a>
+                <a href="#expertise" class="hover:text-alphagen-yellow transition">Track Record</a>
+                <a href="#methodology" class="hover:text-alphagen-yellow transition">Pedagogy</a>
+                <a href="#admissions" class="hover:text-alphagen-yellow transition">Showcase</a>
+                <a href="#student-work" class="hover:text-alphagen-yellow transition">Projects</a>
+                <a href="#neurodivergent" class="hover:text-alphagen-yellow transition">Inclusive Learning</a>
+                <a href="#tutor-training" class="hover:text-alphagen-yellow transition">Tutor Governance</a>
+                <a href="#endorsements" class="hover:text-alphagen-yellow transition">Endorsements</a>
+                <a href="#gallery" class="hover:text-alphagen-yellow transition">Gallery</a>
+                <a href="#publications" class="hover:text-alphagen-yellow transition">Publications</a>
+            </nav>
+
+            <div class="flex items-center gap-2">
+                <a href="mailto:priyadarshini.basu13@gmail.com?subject=Inquiry%20from%20Portfolio" class="px-3.5 py-1.5 bg-alphagen-purple hover:bg-alphagen-purpleDark text-white font-semibold text-xs rounded-xl transition flex items-center gap-1.5 border border-white/20 shadow-xs">
+                    <i class="fa-solid fa-envelope text-alphagen-yellow"></i> Email Me
+                </a>
+                <a href="https://www.linkedin.com/in/priyadarshini-basu-27058a1aa/" target="_blank" rel="noopener noreferrer" class="px-3.5 py-1.5 bg-white/10 hover:bg-white/20 text-white font-medium text-xs rounded-xl transition flex items-center gap-1.5">
+                    <i class="fa-brands fa-linkedin text-alphagen-yellow"></i> LinkedIn
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-5xl mx-auto px-4 py-8 space-y-12">
+
+        <!-- ==========================================
+             01. HERO / EXECUTIVE ANCHOR
+             ========================================== -->
+        <section id="vision" class="bg-white rounded-2xl p-6 md:p-10 shadow-sm border border-slate-200">
+            <div class="flex items-center justify-between pb-3 mb-6 border-b border-alphagen-lightGrey">
+                <div class="flex items-center gap-2">
+                    
+                   
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                <!-- Text Column -->
+                <div class="md:col-span-8 space-y-4">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-alphagen-purpleGhost text-alphagen-purple text-xs font-semibold rounded-full border border-alphagen-purplePale">
+                        <span class="w-2 h-2 rounded-full bg-alphagen-yellow"></span>
+                        13+ Years in EdTech & K-12 School Systems
+                    </div>
+
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-alphagen-nearBlack tracking-tight">
+                        Priyadarshini Basu
+                    </h2>
+
+                    <p class="text-sm font-bold text-alphagen-purple">
+                        Curriculum Expert &nbsp;•&nbsp; Coding Educator &nbsp;•&nbsp; Learning Designer &nbsp;•&nbsp; Faculty Mentor
+                    </p>
+
+                    <blockquote class="p-4 bg-alphagen-purpleGhost border-l-4 border-alphagen-purple rounded-r-xl">
+                        <p class="text-sm md:text-base font-semibold text-alphagen-darkGrey leading-relaxed italic">
+                            “I design learning experiences where technology becomes a <span class="spark-highlight"><span>medium for thinking, creating, and solving problems</span></span>—not just a skill to be consumed.”
+                        </p>
+                    </blockquote>
+
+                    <!-- Executive Stats Row -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 text-center">
+                        <div class="p-3 bg-alphagen-lightGrey rounded-xl">
+                            <span class="text-xl font-extrabold text-alphagen-purple block">13+</span>
+                            <span class="text-[10px] text-alphagen-darkGrey font-medium">Years in EdTech & Schools</span>
+                        </div>
+                        <div class="p-3 bg-alphagen-lightGrey rounded-xl">
+                            <span class="text-xl font-extrabold text-alphagen-purple block">1,000+</span>
+                            <span class="text-[10px] text-alphagen-darkGrey font-medium">Students Trained</span>
+                        </div>
+                        <div class="p-3 bg-alphagen-lightGrey rounded-xl">
+                            <span class="text-xl font-extrabold text-alphagen-purple block">13,000+</span>
+                            <span class="text-[10px] text-alphagen-darkGrey font-medium">Instruction Hours</span>
+                        </div>
+                        <div class="p-3 bg-alphagen-lightGrey rounded-xl">
+                            <span class="text-xl font-extrabold text-alphagen-purple block">100+</span>
+                            <span class="text-[10px] text-alphagen-darkGrey font-medium">Camp Sessions</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Profile Photo -->
+                <div class="md:col-span-4 flex flex-col items-center">
+                    <div class="w-48 h-56 media-frame shadow-xs bg-slate-50 border-2 border-alphagen-purplePale relative flex items-center justify-center rounded-2xl overflow-hidden group">
+                        <img 
+                            src="Priyadarshini Basu.png" 
+                            alt="Priyadarshini Basu" 
+                            class="w-full h-full object-cover zoomable-image"
+                            onclick="openImageModal(this.src, 'Priyadarshini Basu — Executive Profile')"
+                            onerror="this.onerror=null; this.src='https://placehold.co/400x500/5E48C4/FFFFFF?text=Priyadarshini+Basu';"
+                        />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             ACADEMIC BACKGROUND
+             ========================================== -->
+        <section id="academic" class="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-2xs space-y-4">
+            <div class="flex items-center justify-between border-b border-alphagen-lightGrey pb-3">
+                <div>
+                    <h3 class="text-base font-bold text-alphagen-nearBlack flex items-center gap-2">
+                        <i class="fa-solid fa-graduation-cap text-alphagen-purple"></i> Academic Background 
+                    </h3>
+                   
+                </div>
+              
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="p-4 bg-alphagen-purpleGhost rounded-xl border border-alphagen-purplePale flex items-start gap-3.5">
+                    <div class="w-10 h-10 rounded-lg bg-alphagen-purple text-alphagen-yellow flex items-center justify-center font-bold text-sm shrink-0 shadow-2xs">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <div>
+                        <span class="text-[10px] font-bold text-alphagen-purple uppercase tracking-wider block">Undergraduate Degree</span>
+                        <h4 class="text-sm font-bold text-alphagen-nearBlack">B.Tech in Computer Science and Engineering</h4>
+                        <p class="text-xs text-alphagen-darkGrey mt-1 leading-relaxed">
+                            Foundational training in algorithms, object-oriented design, data structures, and computer architecture.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="p-4 bg-alphagen-purpleGhost rounded-xl border border-alphagen-purplePale flex items-start gap-3.5">
+                    <div class="w-10 h-10 rounded-lg bg-alphagen-purple text-alphagen-yellow flex items-center justify-center font-bold text-sm shrink-0 shadow-2xs">
+                        <i class="fa-solid fa-chalkboard-user"></i>
+                    </div>
+                    <div>
+                        <span class="text-[10px] font-bold text-alphagen-purple uppercase tracking-wider block">Postgraduate Specialization</span>
+                        <h4 class="text-sm font-bold text-alphagen-nearBlack">Post Graduate in Education Technology</h4>
+                        <p class="text-xs text-alphagen-darkGrey mt-1 leading-relaxed">
+                            Advanced methodologies in curriculum instructional design, learning experience design (LXD), learner assessment, and digital pedagogies.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             CERTIFICATIONS CAROUSEL (WITH WHJ_PROMOTIONS, ADHD, MEE)
+             ========================================== -->
+        <section id="certifications-carousel" class="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-2xs space-y-4">
+            <div class="flex items-center justify-between border-b border-alphagen-lightGrey pb-3">
+                <div>
+                    <h3 class="text-base font-bold text-alphagen-nearBlack flex items-center gap-2">
+                        <i class="fa-solid fa-award text-alphagen-purple"></i>  Certifications & Credentials
+                    </h3>
+                   
+                </div>
+                <!-- Navigation Controls -->
+                <div class="flex items-center gap-2">
+                    <span id="cert-counter" class="text-xs font-semibold text-alphagen-purple mr-1">1 / 15</span>
+                    <button onclick="prevCertSlide()" class="w-8 h-8 rounded-lg bg-alphagen-lightGrey hover:bg-alphagen-purplePale text-alphagen-nearBlack transition flex items-center justify-center text-xs">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <button onclick="nextCertSlide()" class="w-8 h-8 rounded-lg bg-alphagen-lightGrey hover:bg-alphagen-purplePale text-alphagen-nearBlack transition flex items-center justify-center text-xs">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Certifications Carousel Viewport -->
+            <div class="relative overflow-hidden min-h-[350px]">
+                <div id="cert-track" class="carousel-track">
+                    <script>
+                        const certList = [
+                            { id: 1, title: "WhiteHat Jr. Teacher Fellow Promotion", issuer: "WhiteHat Jr.", src: "whj_promotions.jpeg" },
+                            { id: 2, title: "ADHD for Teachers and Support Staff", issuer: "Udemy", src: "adhd.jpeg" },
+                            { id: 3, title: "Certified Microsoft Innovative Educator", issuer: "Microsoft", src: "mee.jpeg" },
+                            { id: 4, title: "Learn AI with Quarky", issuer: "STEMPedia", src: "quarky.png" },
+                            { id: 5, title: "International Teacher's Olympiad", issuer: "Suraasa", src: "olympiad.jpeg" },
+                            { id: 6, title: "Foundations of Teaching for Learning: Curriculum", issuer: "CommonWealth Education Trust", src: "learning.jpeg" },
+                            { id: 7, title: "Training Programme on Computer Applications at the ICSE Level", issuer: "Council for the Indian School Certificate Examinations", src: "cisce1.jpeg" },
+                            { id: 8, title: "Minecraft: Education Edition: Teacher Academy", issuer: "Microsoft", src: "mee.jpg" },
+                            { id: 9, title: "School In Charge: 16th SOF National Cyber Olympiad ", issuer: "Science Olympiad Foundation", src: "olympiad1.jpg" },
+                            { id: 10, title: "Python for Computer Vision with OpenCV and Deep Learning", issuer: "Udemy", src: "deep_learning.jpg" },
+                            { id: 11, title: "Game Design Fundamentals", issuer: "WhiteHat Jr", src: "whj1.jpg" },
+                            { id: 12, title: "Autism in the Classroom - Teaching learners with Autism", issuer: "Udemy", src: "autism.jpg" },
+                            { id: 13, title: "Cospaedes Edu Educator's Beginner Course" , issuer: "Delightex" , src: "cospaces.jpeg" },
+                            { id: 14, title: "Mastering Bloom's Taxonomy-The Ultimate Guide for Teachers", issuer: "Udemy", src: "blooms.jpg" },
+                            { id: 15, title: "CS with VexCode VR", issuer: "Vex Robotics", src: "vex.png" }
+                        ];
+
+                        document.write(certList.map(cert => `
+                            <div class="w-full shrink-0 px-2">
+                                <div class="max-w-xl mx-auto p-4 bg-alphagen-purpleGhost rounded-2xl border border-alphagen-purplePale flex flex-col items-center text-center space-y-3">
+                                    <div class="w-full h-56 media-frame bg-white flex items-center justify-center p-2 rounded-xl group relative overflow-hidden">
+                                        <img 
+                                            src="${cert.src}" 
+                                            alt="${cert.title}" 
+                                            class="w-full h-full object-contain zoomable-image"
+                                            onclick="openImageModal('${cert.src}', '${cert.title} — ${cert.issuer}')"
+                                            onerror="this.onerror=null; this.src='https://placehold.co/600x420/5E48C4/FFFFFF?text=Certificate+${cert.id}';"
+                                        />
+                                        <div class="absolute bottom-2 right-2 bg-alphagen-purpleDark/80 text-white text-[10px] px-2 py-0.5 rounded backdrop-blur-xs pointer-events-none">
+                                            <i class="fa-solid fa-expand mr-1"></i>Click to Enlarge
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <span class="text-[10px] font-bold text-alphagen-purple uppercase tracking-wider block">${cert.issuer}</span>
+                                        <h4 class="text-xs md:text-sm font-bold text-alphagen-nearBlack mt-0.5">${cert.title}</h4>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        `).join(''));
+                    </script>
+                </div>
+            </div>
+
+            <!-- Slide Indicator Bar -->
+            <div class="flex items-center justify-center gap-1 overflow-x-auto py-2" id="cert-dots">
+                <script>
+                    for (let i = 0; i < 15; i++) {
+                        document.write(`<button onclick="setCertSlide(${i})" class="w-2 h-2 rounded-full ${i === 0 ? 'bg-alphagen-purple' : 'bg-slate-200'} transition shrink-0" title="Slide ${i+1}"></button>`);
+                    }
+                </script>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             02. EXPERTISE & INSTITUTIONAL TRACK RECORD
+             ========================================== -->
+        <section id="expertise" class="space-y-6">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h3 class="text-lg font-bold text-alphagen-nearBlack flex items-center gap-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-alphagen-purple"></span>
+                        Key Competencies & Professional Track Record
+                    </h3>
+                
+                </div>
+               
+            </div>
+
+            <!-- 4 Pillar Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="p-4 bg-white rounded-xl border border-slate-200 shadow-2xs hover:border-alphagen-purple transition">
+                    <div class="w-8 h-8 rounded-lg bg-alphagen-purplePale text-alphagen-purple flex items-center justify-center text-xs mb-3 font-bold">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h4 class="text-xs font-bold text-alphagen-nearBlack mb-1.5">Computer Science & Coding</h4>
+                    <p class="text-[11px] text-alphagen-darkGrey leading-relaxed">
+                        Helping learners move from their first coding concepts to building games, websites and interactive applications using tools such as Scratch and Python.
+                    </p>
+                </div>
+
+                <div class="p-4 bg-alphagen-cyanPale/60 rounded-xl border border-alphagen-cyan/40 shadow-2xs hover:border-alphagen-cyanDark transition">
+                    <div class="w-8 h-8 rounded-lg bg-white text-alphagen-cyanDark flex items-center justify-center text-xs mb-3 font-bold">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <h4 class="text-xs font-bold text-alphagen-cyanDark mb-1.5">AI & Emerging Tech</h4>
+                    <p class="text-[11px] text-alphagen-darkGrey leading-relaxed">
+                        Making AI and emerging technologies easier to understand through hands-on projects, from building AI-powered applications and exploring computer vision to working with physical computing devices, sensors and interactive hardware.
+                    </p>
+                </div>
+
+                <div class="p-4 bg-white rounded-xl border border-slate-200 shadow-2xs hover:border-alphagen-purple transition">
+                    <div class="w-8 h-8 rounded-lg bg-alphagen-purplePale text-alphagen-purple flex items-center justify-center text-xs mb-3 font-bold">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+                    <h4 class="text-xs font-bold text-alphagen-nearBlack mb-1.5">Curriculum Architecture</h4>
+                    <p class="text-[11px] text-alphagen-darkGrey leading-relaxed">
+                        Designing structured, project-based learning experiences for ages 7–16 that connect concepts to practical activities, while adapting to different learning needs and abilities.
+
+
+                    </p>
+                </div>
+
+                <div class="p-4 bg-white rounded-xl border border-slate-200 shadow-2xs hover:border-alphagen-purple transition">
+                    <div class="w-8 h-8 rounded-lg bg-alphagen-purplePale text-alphagen-purple flex items-center justify-center text-xs mb-3 font-bold">
+                        <i class="fa-solid fa-chalkboard-user"></i>
+                    </div>
+                    <h4 class="text-xs font-bold text-alphagen-nearBlack mb-1.5">Educator Mentorship</h4>
+                    <p class="text-[11px] text-alphagen-darkGrey leading-relaxed">
+                        Supporting educators through training, mentoring, classroom observations and practical teaching guidelines, helping them deliver engaging, consistent and meaningful learning experiences.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Professional Experience Timeline with Enlarged Institutional Logos -->
+            <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-2xs">
+                <div class="flex items-center justify-between mb-4">
+                    <h4 class="text-xs font-bold text-alphagen-midGrey uppercase tracking-wider">Institutional Experience</h4>
+                   
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    
+                    <!-- Institution 1: AlphaGen Learning -->
+                    <div class="p-4 bg-alphagen-purpleGhost rounded-xl border border-alphagen-purplePale flex flex-col justify-between">
+                        <div>
+                            <div class="h-24 w-full bg-white rounded-xl border border-alphagen-purplePale mb-3 flex items-center justify-center p-3 shadow-2xs">
+                                <img 
+                                    src="AGLogo.png" 
+                                    alt="AlphaGen Learning Logo" 
+                                    class="max-h-full max-w-full object-contain"
+                                    onerror="this.onerror=null; this.src='https://placehold.co/300x120/5E48C4/FFFFFF?text=AlphaGen+Logo';"
+                                />
+                            </div>
+                            <span class="text-[10px] font-bold text-alphagen-purple block uppercase">AlphaGen Learning</span>
+                            <span class="text-xs font-bold text-alphagen-nearBlack">Curriculum Expert / Developer</span>
+                            <p class="text-[11px] text-alphagen-darkGrey mt-1">Lead the design of coding, AI and STEM learning pathways for young learners, with a focus on hands-on, project-based learning.</p>
+                        </div>
+                    </div>
+
+                    <!-- Institution 2: WhiteHat Jr / BYJU'S -->
+                    <div class="p-4 bg-alphagen-purpleGhost rounded-xl border border-alphagen-purplePale flex flex-col justify-between">
+                        <div>
+                            <div class="h-24 w-full bg-white rounded-xl border border-alphagen-purplePale mb-3 flex items-center justify-center p-3 shadow-2xs">
+                                <img 
+                                    src="WHJ.jpg" 
+                                    alt="WhiteHat Jr Logo" 
+                                    class="max-h-full max-w-full object-contain"
+                                    onerror="this.onerror=null; this.src='https://placehold.co/300x120/4A3AAD/FFFFFF?text=WhiteHat+Jr+Logo';"
+                                />
+                            </div>
+                            <span class="text-[10px] font-bold text-alphagen-purple block uppercase">WhiteHat Jr / BYJU'S</span>
+                            <span class="text-xs font-bold text-alphagen-nearBlack">Coding Faculty → Mentor → Fellow</span>
+                            <p class="text-[11px] text-alphagen-darkGrey mt-1">Progressed from teaching coding to mentoring educators, conducting faculty audits and contributing to Minecraft Education curriculum development.</p>
+                        </div>
+                    </div>
+
+                    <!-- Institution 3: R.N. Singh Memorial HS -->
+                    <div class="p-4 bg-alphagen-purpleGhost rounded-xl border border-alphagen-purplePale flex flex-col justify-between">
+                        <div>
+                            <div class="h-24 w-full bg-white rounded-xl border border-alphagen-purplePale mb-3 flex items-center justify-center p-3 shadow-2xs">
+                                <img 
+                                    src="rnsingh.jpeg" 
+                                    alt="R.N. Singh Memorial HS Logo" 
+                                    class="max-h-full max-w-full object-contain"
+                                    onerror="this.onerror=null; this.src='https://placehold.co/300x120/5E48C4/FFFFFF?text=R.N.+Singh+Logo';"
+                                />
+                            </div>
+                            <span class="text-[10px] font-bold text-alphagen-purple block uppercase">R.N. Singh Memorial HS</span>
+                            <span class="text-xs font-bold text-alphagen-nearBlack">Senior Coding Faculty</span>
+                            <p class="text-[11px] text-alphagen-darkGrey mt-1">Coached students for computer science Olympiads and contributed to the CISCE computer science curriculum development team.</p>
+                        </div>
+                    </div>
+
+                    <!-- Institution 4: Aditya Academy -->
+                    <div class="p-4 bg-alphagen-purpleGhost rounded-xl border border-alphagen-purplePale flex flex-col justify-between">
+                        <div>
+                            <div class="h-24 w-full bg-white rounded-xl border border-alphagen-purplePale mb-3 flex items-center justify-center p-3 shadow-2xs">
+                                <img 
+                                    src="aa.png" 
+                                    alt="Aditya Academy Logo" 
+                                    class="max-h-full max-w-full object-contain"
+                                    onerror="this.onerror=null; this.src='https://placehold.co/300x120/4A3AAD/FFFFFF?text=Aditya+Academy+Logo';"
+                                />
+                            </div>
+                            <span class="text-[10px] font-bold text-alphagen-purple block uppercase">Aditya Academy</span>
+                            <span class="text-xs font-bold text-alphagen-nearBlack">Computer Faculty</span>
+                            <p class="text-[11px] text-alphagen-darkGrey mt-1">Taught CBSE computer science to secondary students aged 12–18, building their programming knowledge and practical computing skills.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             03. METHODOLOGY & VIDEO WALKTHROUGH
+             ========================================== -->
+        <section id="methodology" class="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-2xs space-y-6">
+            <div class="flex items-center justify-between border-b border-alphagen-lightGrey pb-3">
+                <div>
+                    <h3 class="text-base font-bold text-alphagen-nearBlack flex items-center gap-2">
+                        <i class="fa-solid fa-play text-alphagen-purple"></i>  Methodology Walkthrough
+                    </h3>
+                   
+                </div>
+            </div>
+
+            <!-- YouTube Video Embed Container (Direct Iframe) -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+                <div class="md:col-span-7">
+                    <div class="aspect-video w-full rounded-xl overflow-hidden shadow border border-slate-200 bg-slate-900">
+                        <iframe 
+                            class="w-full h-full" 
+                            src="https://www.youtube.com/embed/RwmjdGxeJ5I" 
+                            title="Priyadarshini Basu — Educator Walkthrough" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- Core Inquiry Statement -->
+                <div class="md:col-span-5 space-y-3">
+                    <div class="p-3.5 bg-alphagen-purpleGhost rounded-xl border border-alphagen-purplePale text-xs">
+                        <span class="text-[10px] font-bold text-alphagen-midGrey uppercase block mb-1">First Principle:</span>
+                        <p class="text-alphagen-darkGrey font-medium leading-relaxed">
+                            I don't ask: <span class="line-through text-slate-400">"What tool should we teach?"</span><br>
+                            I ask: <span class="font-bold text-alphagen-purple">"What should this learner be able to think, create, or solve by the end?"</span>
+                        </p>
+                    </div>
+
+                    <div class="p-3.5 bg-emerald-50 rounded-xl border border-emerald-200 text-xs">
+                        <span class="text-[10px] font-bold text-emerald-800 uppercase block mb-1">The AI Mindset:</span>
+                        <p class="text-emerald-900 font-medium leading-relaxed">
+                            <strong>Think → Ask → Build → Test → Debug → Improve.</strong> AI amplifies thinking; it doesn't replace student problem-solving.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6-Step Learning Design Cycle -->
+            <div class="pt-4 border-t border-alphagen-lightGrey">
+                <span class="text-xs font-bold text-alphagen-nearBlack uppercase tracking-wider block mb-3">
+                    6-Step Learning Design Cycle
+                </span>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2 text-center text-xs">
+                    <div class="p-2.5 bg-alphagen-lightGrey rounded-xl">
+                        <span class="text-alphagen-purple font-bold block text-sm">1. Understand</span>
+                        <span class="text-[10px] text-alphagen-midGrey">Prior context & goals</span>
+                    </div>
+                    <div class="p-2.5 bg-alphagen-lightGrey rounded-xl">
+                        <span class="text-alphagen-purple font-bold block text-sm">2. Experience</span>
+                        <span class="text-[10px] text-alphagen-midGrey">Story or real problem</span>
+                    </div>
+                    <div class="p-2.5 bg-alphagen-lightGrey rounded-xl">
+                        <span class="text-alphagen-purple font-bold block text-sm">3. Explore</span>
+                        <span class="text-[10px] text-alphagen-midGrey">Test ideas & test code</span>
+                    </div>
+                    <div class="p-2.5 bg-alphagen-lightGrey rounded-xl">
+                        <span class="text-alphagen-purple font-bold block text-sm">4. Build</span>
+                        <span class="text-[10px] text-alphagen-midGrey">Tangible application</span>
+                    </div>
+                    <div class="p-2.5 bg-alphagen-coralPale rounded-xl border border-alphagen-coral/30">
+                        <span class="text-alphagen-coralDark font-bold block text-sm">5. Debug</span>
+                        <span class="text-[10px] text-alphagen-coralDark">Isolate & troubleshoot</span>
+                    </div>
+                    <div class="p-2.5 bg-alphagen-lightGrey rounded-xl">
+                        <span class="text-alphagen-purple font-bold block text-sm">6. Share</span>
+                        <span class="text-[10px] text-alphagen-midGrey">Reflect & iterate</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             04. ADMISSIONS, MENTORSHIP & SHOWCASE
+             2 Instagram Reels (DFnYqJlOA_e, DGYRn5eM24d) + University CS Window
+             ========================================== -->
+        <section id="admissions" class="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-2xs space-y-6">
+            <div class="flex items-center justify-between border-b border-alphagen-lightGrey pb-3">
+                <div>
+                    <h3 class="text-base font-bold text-alphagen-nearBlack flex items-center gap-2">
+                        <i class="fa-solid fa-graduation-cap text-alphagen-purple"></i> Direct School Admissions (DSA) & University Mentorship
+                    </h3>
+                    
+                </div>
+                
+            </div>
+
+            <!-- 3 Column Showcase -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+                
+                <!-- Instagram Video Slot 1: DSA Showcase #1 (DFnYqJlOA_e) -->
+                <div class="p-4 bg-alphagen-purpleGhost rounded-xl border border-alphagen-purplePale space-y-3 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-bold text-alphagen-purple uppercase tracking-wider flex items-center gap-1.5">
+                                <i class="fa-brands fa-instagram text-alphagen-coral"></i> Aiden Tan
+                            </span>
+                            
+                        </div>
+
+                        <div class="aspect-[9/16] w-full max-w-[260px] mx-auto rounded-xl overflow-hidden shadow border border-slate-200 bg-black">
+                            <iframe 
+                                class="w-full h-full" 
+                                src="https://www.instagram.com/p/DFnYqJlOA_e/embed/" 
+                                frameborder="0" 
+                                scrolling="no" 
+                                allowtransparency="true" 
+                                allow="encrypted-media;">
+                            </iframe>
+                        </div>
+                    </div>
+
+                    <p class="text-[11px] text-alphagen-darkGrey leading-relaxed mt-2 text-center">
+                        <strong>Aiden Tan's</strong> Success Story
+                    </p>
+                </div>
+
+                <!-- Instagram Video Slot 2: DSA Showcase #2 (DGYRn5eM24d) -->
+                <div class="p-4 bg-alphagen-purpleGhost rounded-xl border border-alphagen-purplePale space-y-3 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-bold text-alphagen-purple uppercase tracking-wider flex items-center gap-1.5">
+                                <i class="fa-brands fa-instagram text-alphagen-coral"></i> Aaron Ng
+                            </span>
+                           
+                        </div>
+
+                        <div class="aspect-[9/16] w-full max-w-[260px] mx-auto rounded-xl overflow-hidden shadow border border-slate-200 bg-black">
+                            <iframe 
+                                class="w-full h-full" 
+                                src="https://www.instagram.com/p/DGYRn5eM24d/embed/" 
+                                frameborder="0" 
+                                scrolling="no" 
+                                allowtransparency="true" 
+                                allow="encrypted-media;">
+                            </iframe>
+                        </div>
+                    </div>
+
+                    <p class="text-[11px] text-alphagen-darkGrey leading-relaxed mt-2 text-center">
+                        <strong>Aaron Ng's</strong> Success Story
+                    </p>
+                </div>
+
+                <!-- University Web App Window Mockup -->
+                <div class="p-4 bg-alphagen-purpleGhost rounded-xl border border-alphagen-purplePale space-y-3 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-bold text-alphagen-purple uppercase tracking-wider flex items-center gap-1.5">
+                                <i class="fa-solid fa-window-maximize text-alphagen-purple"></i> University Portfolio
+                            </span>
+                           
+                        </div>
+                
+                        <!-- Computer Browser Mockup Window -->
+                        <div class="w-full rounded-xl overflow-hidden shadow-sm border border-slate-300 bg-white flex flex-col">
+                            <!-- Browser Chrome / Top Bar -->
+                            <div class="bg-slate-200 px-3 py-2 flex items-center gap-2 border-b border-slate-300">
+                                <div class="flex items-center gap-1.5 shrink-0">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-red-400 block"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-yellow-400 block"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-green-400 block"></span>
+                                </div>
+                                <div class="bg-white rounded-md px-2.5 py-0.5 text-[10px] text-slate-500 font-mono flex-1 truncate text-center shadow-2xs">
+                                    https://keighan-kyler-haftl-portfolio.netlify.app/
+                                </div>
+                            </div>
+                
+                            <!-- 16:9 Screenshot Area -->
+                            <div class="aspect-video w-full bg-slate-50 relative overflow-hidden group">
+                                <img 
+                                    src="keighan.png" 
+                                    alt="Keighan Haftl" 
+                                    class="w-full h-full object-cover zoomable-image"
+                                    onclick="openImageModal(this.src, 'Keighan Haftl — University Portfolio Showcase')"
+                                    onerror="this.onerror=null; this.src='https://placehold.co/960x540/5E48C4/FFFFFF?text=Keegan+Heffern+Portfolio+Cover';"
+                                />
+                                <div class="absolute bottom-2 right-2 bg-alphagen-purpleDark/80 text-white text-[10px] px-2 py-0.5 rounded backdrop-blur-xs pointer-events-none">
+                                    <i class="fa-solid fa-expand mr-1"></i>Enlarge
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- External Live Portfolio Link Button -->
+                        <div class="pt-3">
+                            <a 
+                                href="https://keighan-kyler-haftl-portfolio.netlify.app/" 
+                                target="_blank" 
+                                rel="noopener noreferrer" 
+                                class="w-full py-2 px-3 bg-white hover:bg-alphagen-purpleGhost border border-alphagen-purplePale hover:border-alphagen-purple rounded-lg text-xs font-semibold text-alphagen-nearBlack flex items-center justify-center gap-2 transition shadow-2xs group"
+                            >
+                                <i class="fa-solid fa-link text-alphagen-purple text-xs group-hover:scale-110 transition-transform"></i>
+                                <span>Visit Student's Live Portfolio</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-alphagen-midGrey group-hover:text-alphagen-purple transition"></i>
+                            </a>
+                        </div>
+                    </div>
+                
+                    <!-- Outcome Note -->
+                    <p class="text-[11px] text-alphagen-darkGrey leading-relaxed mt-2 text-center">
+                        <strong class="text-alphagen-nearBlack">:</strong> University admission portfolio of Keighan Haftl
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==========================================
+             05. STUDENT WORK: LANDSCAPE YOUTUBE VIDEOS
+             ========================================== -->
+        <section id="student-work" class="space-y-4">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h3 class="text-lg font-bold text-alphagen-nearBlack flex items-center gap-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-alphagen-purple"></span>
+                        Student Work & Authentic Prototypes
+                    </h3>
+                  
+                </div>
+               
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                
+                <!-- Video 1: AI Waste-Sorting Model (9Rj1aRKRxXo) -->
+                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-2xs space-y-3 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-2"> 
+                           
+                        </div>
+                        <h4 class="text-xs md:text-sm font-bold text-alphagen-nearBlack">AI Waste-Sorting Model</h4>
+                        <p class="text-[10px] text-alphagen-midGrey mb-2.5">OpenCV & Python (Age: 15)</p>
+
+                        <!-- 16:9 LANDSCAPE YOUTUBE VIDEO EMBED -->
+                        <div class="aspect-video w-full rounded-lg overflow-hidden bg-slate-900 border border-slate-200">
+                            <iframe 
+                                class="w-full h-full" 
+                                src="https://www.youtube.com/embed/9Rj1aRKRxXo" 
+                                title="AI Waste-Sorting Model Demo" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                    <p class="text-[11px] text-alphagen-darkGrey leading-relaxed bg-slate-50 p-2.5 rounded-lg border border-slate-100">
+                        Guided Avinash (Age 15) through an exploratory machine learning project using PictoBlox to build a functional, real-time waste sorter. By training a computer vision and image classification model on diverse item datasets, Avinash programmed the system to recognize incoming objects, accurately differentiate between medical, electronic, and organic waste, and dynamically indicate the appropriate disposal bin.
+                    </p>
+                </div>
+
+                <!-- Video 2: Pygame Engine -->
+                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-2xs space-y-3 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            
+                        </div>
+                        <h4 class="text-xs md:text-sm font-bold text-alphagen-nearBlack">Study Material Generator using Agentic AI</h4>
+                        <p class="text-[10px] text-alphagen-midGrey mb-2.5">Agentic AI and Databases (Age: 14)</p>
+
+                        <!-- 16:9 LANDSCAPE YOUTUBE VIDEO EMBED -->
+                        <div class="aspect-video w-full rounded-lg overflow-hidden bg-slate-900 border border-slate-200">
+                            <iframe 
+                                class="w-full h-full" 
+                                src="https://www.youtube.com/embed/uO1I5WPamq0" 
+                                title="Pygame Engine Demo" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                    <p class="text-[11px] text-alphagen-darkGrey leading-relaxed bg-slate-50 p-2.5 rounded-lg border border-slate-100">
+                        Guided Ayesha (Age 14) through an exploratory project in Agentic AI and multi-step workflows. She designed an end-to-end study assistant that combines her own uploaded revision notes and school materials with targeted Google Search results to generate concise, structured study notes. The synthesized output is automatically stored in a database, powering a connected secondary workflow that generates interactive quizzes for self-assessment.
+                    </p>
+                </div>
+
+                <!-- Video 3: Multi-Agent Study Bot -->
+                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-2xs space-y-3 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            
+                        </div>
+                        <h4 class="text-xs md:text-sm font-bold text-alphagen-nearBlack">Maze Game using Block Based Coding - Scratch</h4>
+                        <p class="text-[10px] text-alphagen-midGrey mb-2.5">Introduction to Block based coding, Scratch (Age:7)</p>
+
+                        <!-- 16:9 LANDSCAPE YOUTUBE VIDEO EMBED -->
+                        <div class="aspect-video w-full rounded-lg overflow-hidden bg-slate-900 border border-slate-200">
+                            <iframe 
+                                class="w-full h-full" 
+                                src="https://www.youtube.com/embed/yLrw1TMzU2o" 
+                                title="Multi-Agent Study Bot Demo" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                    <p class="text-[11px] text-alphagen-darkGrey leading-relaxed bg-slate-50 p-2.5 rounded-lg border border-slate-100">
+                        Watching 7-year-old Ignas take his very first steps into coding was an absolute joy! In this introductory session, Ignis explored foundational block-based coding, learning how to trigger actions using basic event handlers and control character movements on screen. He successfully brought his ideas to life—finishing the project completely independently and with a huge, proud smile on his face.
+                    </p>
+                </div>
+
+                <!-- Video 4: Scratch Animation & Game -->
+                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-2xs space-y-3 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                        
+                           
+                        </div>
+                        <h4 class="text-xs md:text-sm font-bold text-alphagen-nearBlack">Wilson's AI Game using Body Detection</h4>
+                        <p class="text-[10px] text-alphagen-midGrey mb-2.5">AI block based coding in Pictoblox (Age:11)</p>
+
+                        <!-- 16:9 LANDSCAPE YOUTUBE VIDEO EMBED -->
+                        <div class="aspect-video w-full rounded-lg overflow-hidden bg-slate-900 border border-slate-200">
+                            <iframe 
+                                class="w-full h-full" 
+                                src="https://www.youtube.com/embed/29JODInoS9Y" 
+                                title="Scratch Interactive Demo" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                    <p class="text-[11px] text-alphagen-darkGrey leading-relaxed bg-slate-50 p-2.5 rounded-lg border border-slate-100">
+                        After building a solid base in coding fundamentals, Wilson took complete creative charge. He brainstormed this project on his own and taught himself how to use PictoBlox’s Human Body Detection tool to track movements and trigger actions in real time.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==========================================
+             05A. TEACHING NEURODIVERGENT & DIVERSE LEARNERS
+             ========================================== -->
+        <section id="neurodivergent" class="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-2xs space-y-6">
+            <div class="flex items-center justify-between border-b border-alphagen-lightGrey pb-3">
+                <div>
+                    <h3 class="text-base font-bold text-alphagen-nearBlack flex items-center gap-2">
+                        <i class="fa-solid fa-shapes text-alphagen-purple"></i> Inclusive Technology Education
+                    </h3>
+                    <p class="text-xs text-alphagen-midGrey mt-0.5"></p>
+                </div>
+               
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+                <!-- Image Placeholder (Left) -->
+                <div class="md:col-span-5 flex flex-col items-center">
+                    <div class="w-full h-64 media-frame bg-white rounded-xl shadow-2xs overflow-hidden relative group border border-slate-200 flex items-center justify-center">
+                        <img 
+                            src="autism1.jpg" 
+                            alt="Teaching Neurodivergent Learners" 
+                            class="w-full h-full object-cover zoomable-image"
+                            onclick="openImageModal(this.src, 'Teaching Neurodivergent & Diverse Learners — Inclusive STEM Pedagogy')"
+                            onerror="this.onerror=null; this.src='https://placehold.co/600x480/5E48C4/FFFFFF?text=Neurodivergent+Learners+Photo';"
+                        />
+                        <div class="absolute bottom-2 right-2 bg-alphagen-purpleDark/80 text-white text-[10px] px-2 py-0.5 rounded backdrop-blur-xs pointer-events-none">
+                            <i class="fa-solid fa-expand mr-1"></i>Enlarge
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text / Description Column (Right) -->
+                <div class="md:col-span-7 space-y-3.5">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-alphagen-purpleGhost text-alphagen-purple text-xs font-semibold rounded-full border border-alphagen-purplePale">
+                        <span class="w-2 h-2 rounded-full bg-alphagen-coral"></span>
+                        Making Technology Learning Accessible to Every Learner
+                    </div>
+
+                   
+
+                    <p class="text-xs text-alphagen-darkGrey leading-relaxed">
+                        I believe every learner can explore and understand technology when given the right support, time and learning environment. My approach begins with understanding what a student can do, how they learn best, and where they may need more guidance.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+                        <div class="p-3 bg-alphagen-purpleGhost rounded-xl border border-alphagen-purplePale">
+                            <div class="flex items-center gap-2 mb-1">
+                                <i class="fa-solid fa-puzzle-piece text-alphagen-purple text-xs"></i>
+                                <span class="text-xs font-bold text-alphagen-nearBlack">Learning at Their Own Pace</span>
+                            </div>
+                            <p class="text-[11px] text-alphagen-darkGrey leading-relaxed">
+                                Breaking concepts into smaller, manageable steps and giving learners enough time to understand, practise and build confidence without feeling overwhelmed.
+                            </p>
+                        </div>
+
+                        <div class="p-3 bg-alphagen-purpleGhost rounded-xl border border-alphagen-purplePale">
+                            <div class="flex items-center gap-2 mb-1">
+                                <i class="fa-solid fa-sliders text-alphagen-coral text-xs"></i>
+                                <span class="text-xs font-bold text-alphagen-nearBlack">Learning Through Exploration</span>
+                            </div>
+                            <p class="text-[11px] text-alphagen-darkGrey leading-relaxed">
+                                Using visual coding, hands-on activities and practical projects to make technology easier to understand. I encourage trial and error, allowing students to experiment, make mistakes and try again with patience and guidance.
+                            </p>
+                        </div>
+                    </div>
+
+                    <p class="text-[11px] text-alphagen-midGrey italic bg-slate-50 p-2.5 rounded-lg border border-slate-100">
+                        “Inclusive education begins with understanding the learner, building on what they can do, and giving them the time, support and confidence to discover what they can do next.”
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             05B. TUTOR ONBOARDING, TRAINING & QUALITY AUDITS
+             ========================================== -->
+        <section id="tutor-training" class="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-2xs space-y-6">
+            <div class="flex items-center justify-between border-b border-alphagen-lightGrey pb-3">
+                <div>
+                    <h3 class="text-base font-bold text-alphagen-nearBlack flex items-center gap-2">
+                        <i class="fa-solid fa-chalkboard-user text-alphagen-purple"></i> Tutor Onboarding, Training & Quality Audits
+                    </h3>
+                 
+                </div>
+                 
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+                <!-- 2 Image Placeholders (Left Column) -->
+                <div class="md:col-span-5 space-y-4">
+                    <!-- Photo 1: Tutor Training Workshop -->
+                    <div>
+                        <div class="h-44 media-frame bg-white rounded-xl shadow-2xs overflow-hidden relative group border border-slate-200 flex items-center justify-center">
+                            <img 
+                                src="platform.png" 
+                                alt="Platform Training" 
+                                class="w-full h-full object-cover zoomable-image"
+                                onclick="openImageModal(this.src, 'Teacher Platform Training')"
+                                onerror="this.onerror=null; this.src='https://placehold.co/600x400/5E48C4/FFFFFF?text=Tutor+Training+Session+1';"
+                            />
+                            <div class="absolute bottom-2 right-2 bg-alphagen-purpleDark/80 text-white text-[10px] px-2 py-0.5 rounded backdrop-blur-xs pointer-events-none">
+                                <i class="fa-solid fa-expand mr-1"></i>Enlarge
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Photo 2: Quality Audit & Classroom Review -->
+                    <div>
+                        <div class="h-44 media-frame bg-white rounded-xl shadow-2xs overflow-hidden relative group border border-slate-200 flex items-center justify-center">
+                            <img 
+                                src="orientation.png" 
+                                alt="Tutor Onboarding" 
+                                class="w-full h-full object-cover zoomable-image"
+                                onclick="openImageModal(this.src, 'Tutor Onboarding')"
+                                onerror="this.onerror=null; this.src='https://placehold.co/600x400/4A3AAD/FFFFFF?text=Quality+Audit+Session+2';"
+                            />
+                            <div class="absolute bottom-2 right-2 bg-alphagen-purpleDark/80 text-white text-[10px] px-2 py-0.5 rounded backdrop-blur-xs pointer-events-none">
+                                <i class="fa-solid fa-expand mr-1"></i>Enlarge
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Competencies & Points (Right Column) -->
+                <div class="md:col-span-7 space-y-3.5">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-alphagen-purpleGhost text-alphagen-purple text-xs font-semibold rounded-full border border-alphagen-purplePale">
+                        <span class="w-2 h-2 rounded-full bg-alphagen-yellow"></span>
+                        Instructional Leadership & Faculty Scaling
+                    </div>
+
+                    <h4 class="text-base font-bold text-alphagen-nearBlack">
+                        Helping Educators Teach with Confidence and Consistency
+                    </h4>
+
+                    <p class="text-xs text-alphagen-darkGrey leading-relaxed">
+                        Good curriculum works best when educators understand both what they are teaching and how to help students learn. I support tutors from onboarding through ongoing training, helping them use the right tools, follow the curriculum and create engaging learning experiences.
+
+
+                    </p>
+
+                    <!-- 4 Core Pillars Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+                        <!-- Point 1 -->
+                        <div class="p-3 bg-alphagen-purpleGhost rounded-xl border border-alphagen-purplePale space-y-1">
+                            <div class="flex items-center gap-2">
+                                <span class="w-5 h-5 rounded-md bg-alphagen-purple text-alphagen-yellow text-[10px] font-bold flex items-center justify-center">
+                                    <i class="fa-solid fa-user-check"></i>
+                                </span>
+                                <h5 class="text-xs font-bold text-alphagen-nearBlack">Talent Selection & Onboarding</h5>
+                            </div>
+                            <p class="text-[11px] text-alphagen-darkGrey leading-relaxed">
+                                Supporting the selection and onboarding of educators by looking at their technical knowledge, teaching approach and ability to connect with learners.
+                            </p>
+                        </div>
+
+                        <!-- Point 2 -->
+                        <div class="p-3 bg-alphagen-purpleGhost rounded-xl border border-alphagen-purplePale space-y-1">
+                            <div class="flex items-center gap-2">
+                                <span class="w-5 h-5 rounded-md bg-alphagen-purple text-alphagen-yellow text-[10px] font-bold flex items-center justify-center">
+                                    <i class="fa-solid fa-laptop-code"></i>
+                                </span>
+                                <h5 class="text-xs font-bold text-alphagen-nearBlack">Platform & Tool Training</h5>
+                            </div>
+                            <p class="text-[11px] text-alphagen-darkGrey leading-relaxed">
+                                Guiding tutors through coding environments, learning platforms and online classroom tools so they can conduct classes smoothly and confidently.
+                            </p>
+                        </div>
+
+                        <!-- Point 3 -->
+                        <div class="p-3 bg-alphagen-purpleGhost rounded-xl border border-alphagen-purplePale space-y-1">
+                            <div class="flex items-center gap-2">
+                                <span class="w-5 h-5 rounded-md bg-alphagen-purple text-alphagen-yellow text-[10px] font-bold flex items-center justify-center">
+                                    <i class="fa-solid fa-comments"></i>
+                                </span>
+                                <h5 class="text-xs font-bold text-alphagen-nearBlack">Curriculum Development & Improvement</h5>
+                            </div>
+                            <p class="text-[11px] text-alphagen-darkGrey leading-relaxed">
+                                Working with educators to review lesson feedback, improve learning activities and update curriculum based on student needs and classroom experiences.
+                            </p>
+                        </div>
+
+                        <!-- Point 4 -->
+                        <div class="p-3 bg-alphagen-purpleGhost rounded-xl border border-alphagen-purplePale space-y-1">
+                            <div class="flex items-center gap-2">
+                                <span class="w-5 h-5 rounded-md bg-alphagen-coral text-white text-[10px] font-bold flex items-center justify-center">
+                                    <i class="fa-solid fa-clipboard-check"></i>
+                                </span>
+                                <h5 class="text-xs font-bold text-alphagen-nearBlack">Teaching Quality & Feedback</h5>
+                            </div>
+                            <p class="text-[11px] text-alphagen-darkGrey leading-relaxed">
+                                Observing classes, reviewing teaching practices and providing constructive feedback to help educators improve and maintain consistent teaching standards.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             06. ENDORSEMENTS & TESTIMONIALS
+             ========================================== -->
+        <section id="endorsements" class="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-2xs space-y-8">
+            <div class="flex items-center justify-between border-b border-alphagen-lightGrey pb-3">
+                <div>
+                    <h3 class="text-base font-bold text-alphagen-nearBlack flex items-center gap-2">
+                        <i class="fa-solid fa-comments text-alphagen-purple"></i> Testimonials
+                    </h3>
+                   
+                </div>
+               
+            </div>
+
+            <!-- SUBSECTION A: 2 PARENT SCREENSHOTS / TESTIMONIALS (feedback1.jpeg, feedback2.png) -->
+            <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                    <span class="text-xs font-bold text-alphagen-purple uppercase tracking-wider flex items-center gap-1.5">
+                        <i class="fa-solid fa-heart text-alphagen-coral"></i> 01. Parent Testimonials
+                    </span>
+                    
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    
+                    <!-- Parent Slot 1 (feedback1.jpeg) -->
+                    <div class="p-4 bg-alphagen-purpleGhost rounded-xl border border-alphagen-purplePale space-y-3 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs font-bold text-alphagen-nearBlack">Feedback #1</span>
+                              
+                            </div>
+                            <div class="h-52 media-frame bg-white rounded-lg p-1.5 flex items-center justify-center relative group">
+                                <img 
+                                    src="feedback1.jpeg" 
+                                    alt="Parent Feedback Screenshot 1" 
+                                    class="w-full h-full object-contain zoomable-image"
+                                    onclick="openImageModal(this.src, 'Parent Testimonial #1')"
+                                    onerror="this.onerror=null; this.src='https://placehold.co/500x350/5E48C4/FFFFFF?text=Parent+Feedback+Screenshot+1';"
+                                />
+                                <div class="absolute bottom-2 right-2 bg-alphagen-purpleDark/80 text-white text-[10px] px-2 py-0.5 rounded backdrop-blur-xs pointer-events-none">
+                                    <i class="fa-solid fa-expand mr-1"></i>Enlarge
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-[11px] text-alphagen-darkGrey italic bg-white p-2.5 rounded-lg border border-slate-200">
+                          Sylvia- Parent of Arcelia (Indonesia)
+                        </p>
+                    </div>
+
+                    <!-- Parent Slot 2 (feedback2.png) -->
+                    <div class="p-4 bg-alphagen-purpleGhost rounded-xl border border-alphagen-purplePale space-y-3 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs font-bold text-alphagen-nearBlack">Feedback #2</span>
+                               
+                            </div>
+                            <div class="h-52 media-frame bg-white rounded-lg p-1.5 flex items-center justify-center relative group">
+                                <img 
+                                    src="feedback2.png" 
+                                    alt="Parent Feedback Screenshot 2" 
+                                    class="w-full h-full object-contain zoomable-image"
+                                    onclick="openImageModal(this.src, 'Parent Testimonial #2 ')"
+                                    onerror="this.onerror=null; this.src='https://placehold.co/500x350/5E48C4/FFFFFF?text=Parent+Feedback+Screenshot+2';"
+                                />
+                                <div class="absolute bottom-2 right-2 bg-alphagen-purpleDark/80 text-white text-[10px] px-2 py-0.5 rounded backdrop-blur-xs pointer-events-none">
+                                    <i class="fa-solid fa-expand mr-1"></i>Enlarge
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-[11px] text-alphagen-darkGrey italic bg-white p-2.5 rounded-lg border border-slate-200">
+                            Jacqueline- Parent of Nygel (Singapore)
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- SUBSECTION B: 5 TEAM & LEADERSHIP TESTIMONIALS (akd.png, nilanjana.jpg, Prithwiraj.jpg) -->
+            <div class="space-y-4 pt-4 border-t border-alphagen-lightGrey">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <span class="text-xs font-bold text-alphagen-purple uppercase tracking-wider flex items-center gap-1.5">
+                            <i class="fa-solid fa-user-group text-alphagen-purple"></i> 02. Team & Facility Endorsements 
+                        </span>
+                      
+                    </div>
+                    <!-- Controls -->
+                    <div class="flex items-center gap-2">
+                        <button onclick="prevTeamSlide()" class="w-8 h-8 rounded-lg bg-alphagen-lightGrey hover:bg-alphagen-purplePale text-alphagen-nearBlack transition flex items-center justify-center text-xs">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
+                        <button onclick="nextTeamSlide()" class="w-8 h-8 rounded-lg bg-alphagen-lightGrey hover:bg-alphagen-purplePale text-alphagen-nearBlack transition flex items-center justify-center text-xs">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Carousel Viewport -->
+                <div class="relative overflow-hidden min-h-[310px]">
+                    <div id="team-track" class="carousel-track">
+                        
+                        <!-- Team Member 1: Dr. Anand Sharma -->
+                        <div class="w-full shrink-0 px-2">
+                            <div class="max-w-xl mx-auto flex flex-col items-center text-center p-4 bg-alphagen-purpleGhost rounded-2xl border border-alphagen-purplePale">
+                                <div class="w-20 h-20 rounded-full media-frame mb-2.5 shadow-xs overflow-hidden border-2 border-alphagen-purplePale">
+                                    <img 
+                                        src="hb.jpg" 
+                                        alt="Harsha Bharwani" 
+                                        class="w-full h-full object-cover zoomable-image"
+                                        onclick="openImageModal(this.src, 'Harsha Bharwani - Founder, Alphagen Learning')"
+                                        onerror="this.onerror=null; this.src='https://placehold.co/160x160/5E48C4/FFFFFF?text=Team+1';"
+                                    />
+                                </div>
+                                <span class="text-sm font-bold text-alphagen-nearBlack">Harsha Bharwani</span>
+                                <span class="text-xs font-semibold text-alphagen-purple">Founder</span>
+                                <span class="text-[10px] text-alphagen-midGrey mt-0.5"><i class="fa-solid fa-building"></i> AlphaGen Learning</span>
+                                <p class="text-xs text-alphagen-darkGrey italic leading-relaxed mt-3 max-w-lg bg-white p-3 rounded-xl border border-slate-200">
+                                    "Priyadarshini's curriculum architecture and pedagogical mentorship set a benchmark across our technical faculty. Her rubrics ensured exceptional learning outcomes across all cohorts."
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="w-full shrink-0 px-2">
+                            <div class="max-w-xl mx-auto flex flex-col items-center text-center p-4 bg-alphagen-purpleGhost rounded-2xl border border-alphagen-purplePale">
+                                <div class="w-20 h-20 rounded-full media-frame mb-2.5 shadow-xs overflow-hidden border-2 border-alphagen-purplePale">
+                                    <img 
+                                        src="rishan.png" 
+                                        alt="Rishan Raj" 
+                                        class="w-full h-full object-cover zoomable-image"
+                                        onclick="openImageModal(this.src, 'Rishan Raj - Sales and Marketting ')"
+                                        onerror="this.onerror=null; this.src='https://placehold.co/160x160/5E48C4/FFFFFF?text=Team+5';"
+                                    />
+                                </div>
+                                <span class="text-sm font-bold text-alphagen-nearBlack">Rishan Raj</span>
+                                <span class="text-xs font-semibold text-alphagen-purple">Sales and Marketting </span>
+                                <span class="text-[10px] text-alphagen-midGrey mt-0.5"><i class="fa-solid fa-building"></i> Alphagen Learning</span>
+                                <p class="text-xs text-alphagen-darkGrey italic leading-relaxed mt-3 max-w-lg bg-white p-3 rounded-xl border border-slate-200">
+                                    "I've had the pleasure of working alongside Priyadarshini at AlphaGen Learning, where I lead sales and marketing. Her curriculum is one of the strongest assets we have when speaking with parents. She designs learning journeys that are clearly structured, age-appropriate, and built around hands-on projects, so children aged 7–16 see real progress and parents can easily understand the value of each programme. Beyond strengthening our existing courses, she also develops new curriculum that keeps us ahead of emerging trends. This year, she created our Vibe Coding Camp, which attracted strong enrolments, particularly from newly joined students, showing how well her programmes resonate with families discovering AlphaGen for the first time. From a sales perspective, the clarity and quality of her curriculum make it much easier to communicate outcomes, and we consistently receive positive feedback from families about what their children are building and learning. Priyadarshini combines strong instructional design thinking with genuine care for learners, and she would be an asset to any team focused on meaningful STEM education."
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Team Member 2: Akanksha Dewan (akd.png) -->
+                        <div class="w-full shrink-0 px-2">
+                            <div class="max-w-xl mx-auto flex flex-col items-center text-center p-4 bg-alphagen-purpleGhost rounded-2xl border border-alphagen-purplePale">
+                                <div class="w-20 h-20 rounded-full media-frame mb-2.5 shadow-xs overflow-hidden border-2 border-alphagen-purplePale">
+                                    <img 
+                                        src="akd.png" 
+                                        alt="Akanksha Dewan" 
+                                        class="w-full h-full object-cover zoomable-image"
+                                        onclick="openImageModal(this.src, 'Akanksha Dewan - Coding Educator at Alphagen Learning')"
+                                        onerror="this.onerror=null; this.src='https://placehold.co/160x160/4A3AAD/FFFFFF?text=Team+2';"
+                                    />
+                                </div>
+                                <span class="text-sm font-bold text-alphagen-nearBlack">Akanksha Dewan</span>
+                                <span class="text-xs font-semibold text-alphagen-purple">Coding Educator</span>
+                                <span class="text-[10px] text-alphagen-midGrey mt-0.5"><i class="fa-solid fa-building"></i> Alphagen Learning</span>
+                                <p class="text-xs text-alphagen-darkGrey italic leading-relaxed mt-3 max-w-lg bg-white p-3 rounded-xl border border-slate-200">
+                                    "I have a great time working with Priyadarshini as a fellow coding educator. She excels at breaking down coding concepts and helping students aged 14–16 solve coding problems in a structured and engaging way. She encourages logical thinking, problem-solving, and independent learning, enabling students to identify and correct errors while expanding their understanding. She is highly collaborative and has the ability to take/ or give on feedback to be able to continue to improve teaching and learning wherever needed."
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Team Member 3: Nilanjana Ray (nilanjana.jpg) -->
+                        <div class="w-full shrink-0 px-2">
+                            <div class="max-w-xl mx-auto flex flex-col items-center text-center p-4 bg-alphagen-purpleGhost rounded-2xl border border-alphagen-purplePale">
+                                <div class="w-20 h-20 rounded-full media-frame mb-2.5 shadow-xs overflow-hidden border-2 border-alphagen-purplePale">
+                                    <img 
+                                        src="nilanjana.jpg" 
+                                        alt="Nilanjana Ray" 
+                                        class="w-full h-full object-cover zoomable-image"
+                                        onclick="openImageModal(this.src, 'Nilanjana Ray, HOD, SST')"
+                                        onerror="this.onerror=null; this.src='https://placehold.co/160x160/5E48C4/FFFFFF?text=Team+3';"
+                                    />
+                                </div>
+                                <span class="text-sm font-bold text-alphagen-nearBlack">Nilanjana Ray</span>
+                                <span class="text-xs font-semibold text-alphagen-purple">HOD, SST</span>
+                                <span class="text-[10px] text-alphagen-midGrey mt-0.5"><i class="fa-solid fa-building"></i> Ambassador School, Dubai</span>
+                                <p class="text-xs text-alphagen-darkGrey italic leading-relaxed mt-3 max-w-lg bg-white p-3 rounded-xl border border-slate-200">
+                                    "Have worked as colleagues at Sri R.N. Singh Memorial High School, Priyadarshini had been meticulous with her work with an eye for details. She had been a constant source of motivation for her students."
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Team Member 4: Prithwiraj Roy (Prithwiraj.jpg) -->
+                        <div class="w-full shrink-0 px-2">
+                            <div class="max-w-xl mx-auto flex flex-col items-center text-center p-4 bg-alphagen-purpleGhost rounded-2xl border border-alphagen-purplePale">
+                                <div class="w-20 h-20 rounded-full media-frame mb-2.5 shadow-xs overflow-hidden border-2 border-alphagen-purplePale">
+                                    <img 
+                                        src="Prithwiraj.jpg" 
+                                        alt="Prithwiraj Roy" 
+                                        class="w-full h-full object-cover zoomable-image"
+                                        onclick="openImageModal(this.src, 'Prithwiraj Ray - Play On Event Management')"
+                                        onerror="this.onerror=null; this.src='https://placehold.co/160x160/4A3AAD/FFFFFF?text=Team+4';"
+                                    />
+                                </div>
+                                <span class="text-sm font-bold text-alphagen-nearBlack">Prithwiraj Roy</span>
+                                <span class="text-xs font-semibold text-alphagen-purple">Secretary</span>
+                                <span class="text-[10px] text-alphagen-midGrey mt-0.5"><i class="fa-solid fa-building"></i> Play On Event Management</span>
+                                <p class="text-xs text-alphagen-darkGrey italic leading-relaxed mt-3 max-w-lg bg-white p-3 rounded-xl border border-slate-200">
+                                    "I have known Priyadarshini Basu for more than 11 years now, having worked with her at RN Singh Memorial High School from 2015 to 2019. Priyadarshini showed a lot of diligence and responsibility in her work. Her attitude has always been jovial and she’s someone who always maintains her smile whatever the situation. It was a nice experience to work alongside her."
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Team Member 5: Kavita Narang -->
+                        
+
+                    </div>
+                </div>
+
+                <!-- 5 Dot Indicators -->
+                <div class="flex justify-center gap-1.5 pt-1" id="team-dots">
+                    <button onclick="setTeamSlide(0)" class="w-2.5 h-2.5 rounded-full bg-alphagen-purple transition"></button>
+                    <button onclick="setTeamSlide(1)" class="w-2.5 h-2.5 rounded-full bg-slate-200 transition"></button>
+                    <button onclick="setTeamSlide(2)" class="w-2.5 h-2.5 rounded-full bg-slate-200 transition"></button>
+                    <button onclick="setTeamSlide(3)" class="w-2.5 h-2.5 rounded-full bg-slate-200 transition"></button>
+                    <button onclick="setTeamSlide(4)" class="w-2.5 h-2.5 rounded-full bg-slate-200 transition"></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             07. IMAGE GALLERY (green_house_mentor, cisce, fete)
+             ========================================== -->
+        <section id="gallery" class="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-2xs space-y-6">
+            <div class="flex items-center justify-between border-b border-alphagen-lightGrey pb-3">
+                <div>
+                    <h3 class="text-base font-bold text-alphagen-nearBlack flex items-center gap-2">
+                        <i class="fa-solid fa-camera text-alphagen-purple"></i> Image Gallery
+                    </h3>
+                   
+                </div>
+               
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <!-- Gallery Space 1 (green_house_mentor.jpg) -->
+                <div class="bg-alphagen-lightGrey/60 rounded-xl p-3.5 border border-slate-200 space-y-3 flex flex-col justify-between">
+                    <div>
+                        <div class="h-48 media-frame bg-white rounded-lg shadow-2xs overflow-hidden relative group">
+                            <img 
+                                src="green_house_mentor.jpg" 
+                                alt="Science Exhibition at R.N.Singh Memorial High School" 
+                                class="w-full h-full object-cover zoomable-image"
+                                onclick="openImageModal(this.src, 'STEM Holiday Camp Delivery — Hands-on exploratory coding and robotics')"
+                                onerror="this.onerror=null; this.src='https://placehold.co/500x350/5E48C4/FFFFFF?text=STEM+Holiday+Camp';"
+                            />
+                            <div class="absolute bottom-2 right-2 bg-alphagen-purpleDark/80 text-white text-[10px] px-2 py-0.5 rounded backdrop-blur-xs pointer-events-none">
+                                <i class="fa-solid fa-expand mr-1"></i>Enlarge
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Paragraph Below Image -->
+                    <div class="space-y-1 bg-white p-3 rounded-lg border border-slate-200">
+                        <h4 class="text-xs font-bold text-alphagen-nearBlack">Science Exhibition at R.N. Singh Memorial</h4>
+                        <p class="text-[11px] text-alphagen-darkGrey leading-relaxed">
+                            Guiding and mentoring the students of Green House at R.N. Singh Memorial High School as they developed and refined their prototypes for the annual science exhibition.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Gallery Space 2 (cisce.jpeg) -->
+                <div class="bg-alphagen-lightGrey/60 rounded-xl p-3.5 border border-slate-200 space-y-3 flex flex-col justify-between">
+                    <div>
+                        <div class="h-48 media-frame bg-white rounded-lg shadow-2xs overflow-hidden relative group">
+                            <img 
+                                src="cisce.jpeg" 
+                                alt="Faculty Workshop" 
+                                class="w-full h-full object-cover zoomable-image"
+                                onclick="openImageModal(this.src, 'Faculty Workshop')"
+                                onerror="this.onerror=null; this.src='https://placehold.co/500x350/7B6ED4/FFFFFF?text=Faculty+Workshop';"
+                            />
+                            <div class="absolute bottom-2 right-2 bg-alphagen-purpleDark/80 text-white text-[10px] px-2 py-0.5 rounded backdrop-blur-xs pointer-events-none">
+                                <i class="fa-solid fa-expand mr-1"></i>Enlarge
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Paragraph Below Image -->
+                    <div class="space-y-1 bg-white p-3 rounded-lg border border-slate-200">
+                        <h4 class="text-xs font-bold text-alphagen-nearBlack">Workshop with CISCE- Computer Science Team</h4>
+                        <p class="text-[11px] text-alphagen-darkGrey leading-relaxed">
+                            Collaborating with educators across India on CISCE and ICSE curriculum design, alignment, and delivery.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Gallery Space 3 (fete.jpg) -->
+                <div class="bg-alphagen-lightGrey/60 rounded-xl p-3.5 border border-slate-200 space-y-3 flex flex-col justify-between">
+                    <div>
+                        <div class="h-48 media-frame bg-white rounded-lg shadow-2xs overflow-hidden relative group">
+                            <img 
+                                src="fete.jpg" 
+                                alt="Annual Science Exhibition ar R.N.Singh Memorial" 
+                                class="w-full h-full object-cover zoomable-image"
+                                onclick="openImageModal(this.src, 'Annual Science Exhibition ar R.N.Singh Memorial')"
+                                onerror="this.onerror=null; this.src='https://placehold.co/500x350/5E48C4/FFFFFF?text=Coding+Lab+Olympiad';"
+                            />
+                            <div class="absolute bottom-2 right-2 bg-alphagen-purpleDark/80 text-white text-[10px] px-2 py-0.5 rounded backdrop-blur-xs pointer-events-none">
+                                <i class="fa-solid fa-expand mr-1"></i>Enlarge
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Paragraph Below Image -->
+                    <div class="space-y-1 bg-white p-3 rounded-lg border border-slate-200">
+                        <h4 class="text-xs font-bold text-alphagen-nearBlack">Annual Science Exhibition at R.N.Singh Memorial</h4>
+                        <p class="text-[11px] text-alphagen-darkGrey leading-relaxed">
+                            Guiding young innovators through project demonstrations and interactive displays at the R.N.Singh Memorial High School Annual Day Science Exhibition.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==========================================
+             08. PUBLICATIONS & DOCUMENT PDF (publication-2012.pdf)
+             ========================================== -->
+        <section id="publications" class="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-2xs space-y-6">
+            <div class="flex items-center justify-between border-b border-alphagen-lightGrey pb-3">
+                <div>
+                    <h3 class="text-base font-bold text-alphagen-nearBlack flex items-center gap-2">
+                        <i class="fa-solid fa-book-open text-alphagen-purple"></i> Publications 
+                    </h3>
+                  
+                </div>
+               
+            </div>
+
+            <!-- Single Dedicated Publication Showcase Card -->
+            <div class="p-6 bg-alphagen-purpleGhost rounded-2xl border border-alphagen-purplePale grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+                
+                <div class="md:col-span-8 space-y-3">
+                    <div class="flex items-center gap-2">
+                        <span class="text-[10px] font-bold text-alphagen-purple uppercase bg-alphagen-purplePale px-2 py-0.5 rounded">
+                            Featured Research 
+                        </span>
+                      
+                    </div>
+
+                    <h4 class="text-base font-bold text-alphagen-nearBlack">
+                        Bandwidth Utilization and Efficiency in MACA and MACA-BI: A Study
+                    </h4>
+
+                    <p class="text-xs text-alphagen-darkGrey leading-relaxed">
+                        This research presents a comparative study of the sender-initiated MACA (Multiple Access Collision Avoidance) and the receiver-initiated MACA-BI (Multiple Access Collision Avoidance By Invitation) protocols in Mobile Ad hoc Networks (MANETs). It evaluates their channel access mechanisms, bandwidth utilization, and efficiency, demonstrating how MACA-BI simplifies handshakes to a two-way RTR-DATA exchange to cut turnaround overhead, minimize packet collisions, and offer greater robustness against transmission failures
+                    </p>
+
+                    <div class="flex flex-wrap items-center gap-2 pt-2 text-xs">
+                        <span class="px-2.5 py-1 bg-white rounded-lg border border-slate-200 text-alphagen-nearBlack font-medium">
+                            <i class="fa-solid fa-book-open text-alphagen-purple"></i> Authors: Dependra Dhakal, Saroj Bhujel, Priyadarshini Basu, and Biswaraj Sen
+                        </span>
+                        <span class="px-2.5 py-1 bg-white rounded-lg border border-slate-200 text-alphagen-nearBlack font-medium">
+                            <i class="fa-solid fa-microchip text-alphagen-cyanDark"></i> Published In: International Journal of Computer Applications & Information Technology (IJCAIT), Vol. I, Issue II, September 2012 (ISSN: 2278-7720)
+                        </span>
+                    </div>
+                </div>
+
+                <!-- PDF File Link Container with Official Adobe Acrobat Red Logo -->
+                <div class="md:col-span-4 flex flex-col items-center">
+                    <a 
+                        href="publication-2012.pdf" 
+                        target="_blank" 
+                        class="w-full p-4 text-center flex flex-col items-center justify-center bg-white rounded-xl shadow-xs border border-red-200 hover:border-red-400 hover:bg-red-50/40 transition group"
+                    >
+                        <!-- Adobe Acrobat Red Logo Container -->
+                        <div class="w-13 h-13 rounded-2xl bg-[#ED2224] text-white flex items-center justify-center mb-2.5 shadow-md group-hover:scale-105 transition">
+                            <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.99 0C5.367 0 0 5.367 0 11.99c0 6.624 5.367 11.99 11.99 11.99 6.624 0 11.99-5.366 11.99-11.99C23.98 5.367 18.614 0 11.99 0zm-.066 3.018c1.374 0 2.658.334 3.793.94a1.05 1.05 0 0 1-.368 1.938c-.378 0-.745-.078-1.087-.225-.726-.312-1.523-.48-2.338-.48a6.38 6.38 0 0 0-3.924 1.348 1.05 1.05 0 0 1-1.332-1.623 8.442 8.442 0 0 1 5.256-1.898zm7.55 4.542a1.05 1.05 0 0 1 .494 1.418 8.445 8.445 0 0 1-2.023 5.209 1.05 1.05 0 0 1-1.602-1.356 6.38 6.38 0 0 0 1.516-3.864c0-.395-.035-.783-.105-1.16-.098-.553.27-1.077.82-1.176.3-.053.606.01.838.167.024.015.044.037.062.062zm-15.04 0c.264-.176.586-.237.893-.172.553.116.914.653.798 1.206-.06.27-.092.548-.092.83 0 1.455.513 2.805 1.377 3.868a1.05 1.05 0 0 1-1.63 1.324 8.443 8.443 0 0 1-1.838-5.275 1.05 1.05 0 0 1 .492-1.423zm10.748 7.32a1.05 1.05 0 0 1 1.485.025 8.455 8.455 0 0 1 2.215 5.132 1.05 1.05 0 1 1-2.088.214 6.376 6.376 0 0 0-1.64-3.81 1.05 1.05 0 0 1 .028-1.561zm-6.398.01a1.05 1.05 0 0 1 .026 1.562 6.374 6.374 0 0 0-1.64 3.81 1.05 1.05 0 1 1-2.088-.214 8.455 8.455 0 0 1 2.217-5.132 1.05 1.05 0 0 1 1.485-.026zm3.187 1.834c.91 0 1.77.217 2.543.612a1.05 1.05 0 0 1-.95 1.872 3.528 3.528 0 0 0-1.593-.38 3.535 3.535 0 0 0-2.33 1.026 1.05 1.05 0 1 1-1.454-1.514 5.637 5.637 0 0 1 3.784-1.616z"/>
+                            </svg>
+                        </div>
+                        <span class="text-xs font-bold text-alphagen-nearBlack block">Download / View Paperr</span>
+                        <span class="text-[10px] text-red-600 font-semibold mt-0.5 flex items-center gap-1">
+                            <i class="fa-solid fa-file-pdf"></i> Adobe Acrobat PDF
+                        </span>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==========================================
+             09. STRATEGIC OFFERINGS & DIRECT ENGAGEMENT
+             ========================================== -->
+        <section class="bg-alphagen-purple text-white rounded-2xl p-6 md:p-8 shadow-md space-y-6">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-white/20 pb-4">
+                <div>
+                    <span class="text-xs font-bold text-alphagen-yellow uppercase tracking-widest block mb-1">Professional Engagements</span>
+                    <h3 class="text-xl font-extrabold tracking-tight">Core Strategic Offerings</h3>
+                </div>
+                <div class="flex flex-wrap items-center gap-2.5">
+                    <a href="mailto:priyadarshini.basu13@gmail.com?subject=Strategic%20Engagement%20Inquiry" class="px-4 py-2 bg-alphagen-yellow hover:bg-alphagen-yellowDark text-alphagen-nearBlack font-bold text-xs rounded-xl shadow transition flex items-center gap-2">
+                        <i class="fa-solid fa-envelope text-sm"></i> Email Priyadarshini
+                    </a>
+                    <a href="https://www.linkedin.com/in/priyadarshini-basu-27058a1aa/" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-white/10 hover:bg-white/20 text-white font-bold text-xs rounded-xl border border-white/20 shadow transition flex items-center gap-2">
+                        <i class="fa-brands fa-linkedin text-alphagen-yellow text-sm"></i> Connect on LinkedIn
+                    </a>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-alphagen-nearBlack">
+                <div class="p-4 bg-white rounded-xl space-y-1.5 shadow-2xs">
+                    <span class="w-6 h-6 rounded-md bg-alphagen-purple text-alphagen-yellow text-xs font-extrabold flex items-center justify-center">01</span>
+                    <h4 class="text-xs font-bold text-alphagen-nearBlack">K-12 STEM & AI Curriculum Architecture</h4>
+                    <p class="text-[11px] text-alphagen-darkGrey leading-tight">Turnkey pathways from Scratch to Python, Computer Vision, and GenAI.</p>
+                </div>
+
+                <div class="p-4 bg-white rounded-xl space-y-1.5 shadow-2xs">
+                    <span class="w-6 h-6 rounded-md bg-alphagen-purple text-alphagen-yellow text-xs font-extrabold flex items-center justify-center">02</span>
+                    <h4 class="text-xs font-bold text-alphagen-nearBlack">DSA & University CS Mentorship</h4>
+                    <p class="text-[11px] text-alphagen-darkGrey leading-tight">Technical project builds, portfolio curation, and admissions interview prep.</p>
+                </div>
+
+                <div class="p-4 bg-white rounded-xl space-y-1.5 shadow-2xs">
+                    <span class="w-6 h-6 rounded-md bg-alphagen-purple text-alphagen-yellow text-xs font-extrabold flex items-center justify-center">03</span>
+                    <h4 class="text-xs font-bold text-alphagen-nearBlack">Educator Training & Quality Audits</h4>
+                    <p class="text-[11px] text-alphagen-darkGrey leading-tight">Faculty onboarding, observation rubrics, and academic SOP design.</p>
+                </div>
+
+                <div class="p-4 bg-white rounded-xl space-y-1.5 shadow-2xs">
+                    <span class="w-6 h-6 rounded-md bg-alphagen-purple text-alphagen-yellow text-xs font-extrabold flex items-center justify-center">04</span>
+                    <h4 class="text-xs font-bold text-alphagen-nearBlack">AI-Assisted Courseware Consulting</h4>
+                    <p class="text-[11px] text-alphagen-darkGrey leading-tight">Integrating generative AI workflows while safeguarding educational rigor.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Executive Footer -->
+        <footer class="pt-4 pb-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between text-xs text-alphagen-midGrey gap-3">
+            <div>
+                <span>Priyadarshini Basu </span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="#vision" class="hover:text-alphagen-purple">Back to Top ↑</a>
+                <a href="mailto:priyadarshini.basu13@gmail.com" class="hover:text-alphagen-purple font-semibold"><i class="fa-solid fa-envelope"></i> Contact</a>
+                <a href="https://www.linkedin.com/in/priyadarshini-basu-27058a1aa/" target="_blank" class="hover:text-alphagen-purple font-semibold">LinkedIn Profile</a>
+            </div>
+        </footer>
+
+    </main>
+
+    <!-- Scripts for Lightbox Modal & Carousels -->
+    <script>
+        // --- LIGHTBOX MODAL SCRIPT ---
+        function openImageModal(imgSrc, captionText) {
+            const modal = document.getElementById('image-modal');
+            const modalImg = document.getElementById('modal-img');
+            const modalCaption = document.getElementById('modal-caption');
+            if (modal && modalImg) {
+                modalImg.src = imgSrc;
+                modalCaption.innerText = captionText || 'Enlarged Preview';
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeImageModal() {
+            const modal = document.getElementById('image-modal');
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Close on Escape Key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeImageModal();
+            }
+        });
+
+        // --- CERTIFICATIONS CAROUSEL LOGIC (15 SLIDES) ---
+        let certSlideIndex = 0;
+        const totalCertSlides = 15;
+
+        function updateCertView() {
+            const track = document.getElementById('cert-track');
+            if (track) {
+                track.style.transform = `translateX(-${certSlideIndex * 100}%)`;
+            }
+            const counter = document.getElementById('cert-counter');
+            if (counter) {
+                counter.innerText = `${certSlideIndex + 1} / ${totalCertSlides}`;
+            }
+            const dots = document.getElementById('cert-dots');
+            if (dots) {
+                const buttons = dots.getElementsByTagName('button');
+                for (let i = 0; i < buttons.length; i++) {
+                    if (i === certSlideIndex) {
+                        buttons[i].classList.remove('bg-slate-200');
+                        buttons[i].classList.add('bg-alphagen-purple');
+                    } else {
+                        buttons[i].classList.remove('bg-alphagen-purple');
+                        buttons[i].classList.add('bg-slate-200');
+                    }
+                }
+            }
+        }
+
+        function nextCertSlide() {
+            certSlideIndex = (certSlideIndex + 1) % totalCertSlides;
+            updateCertView();
+        }
+
+        function prevCertSlide() {
+            certSlideIndex = (certSlideIndex - 1 + totalCertSlides) % totalCertSlides;
+            updateCertView();
+        }
+
+        function setCertSlide(index) {
+            certSlideIndex = index;
+            updateCertView();
+        }
+
+        // --- TEAM CAROUSEL LOGIC (5 SLIDES) ---
+        let teamSlideIndex = 0;
+        const totalTeamSlides = 5;
+
+        function updateTeamView() {
+            const track = document.getElementById('team-track');
+            if (track) {
+                track.style.transform = `translateX(-${teamSlideIndex * 100}%)`;
+            }
+            const dots = document.getElementById('team-dots');
+            if (dots) {
+                const buttons = dots.getElementsByTagName('button');
+                for (let i = 0; i < buttons.length; i++) {
+                    if (i === teamSlideIndex) {
+                        buttons[i].classList.remove('bg-slate-200');
+                        buttons[i].classList.add('bg-alphagen-purple');
+                    } else {
+                        buttons[i].classList.remove('bg-alphagen-purple');
+                        buttons[i].classList.add('bg-slate-200');
+                    }
+                }
+            }
+        }
+
+        function nextTeamSlide() {
+            teamSlideIndex = (teamSlideIndex + 1) % totalTeamSlides;
+            updateTeamView();
+        }
+
+        function prevTeamSlide() {
+            teamSlideIndex = (teamSlideIndex - 1 + totalTeamSlides) % totalTeamSlides;
+            updateTeamView();
+        }
+
+        function setTeamSlide(index) {
+            teamSlideIndex = index;
+            updateTeamView();
+        }
+    </script>
+</body>
+</html>
