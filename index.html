@@ -247,42 +247,110 @@
     </div>
 
     <!-- Top Sticky Executive Navigation Bar -->
-    <header class="no-print sticky top-0 z-50 bg-alphagen-purpleDark/95 backdrop-blur-md border-b border-white/10 px-5 py-3 shadow-lg">
-        <div class="max-w-6xl mx-auto flex items-center justify-between">
-            <div>
-                <h1 class="text-white font-bold text-sm md:text-base tracking-tight leading-none">
-                    Priyadarshini Basu
-                </h1>
-               
-            </div>
+    <!-- Top Sticky Executive Navigation Bar with Streamlined Menu & Dropdown -->
+<header class="no-print sticky top-0 z-50 bg-[#1E1F1A]/95 backdrop-blur-md border-b-2 border-[#32332B] px-5 py-3 shadow-lg">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+        <!-- Logo / Name -->
+        <a href="#vision" class="text-white hover:text-[#FFDE4D] transition">
+            <h1 class="font-bold text-sm md:text-base tracking-tight leading-none text-white">
+                Priyadarshini Basu
+            </h1>
+        </a>
 
-            <!-- Quick Jump Anchor Links -->
-            <nav class="hidden md:flex items-center gap-5 text-xs font-semibold text-white/85">
-                <a href="#vision" class="hover:text-alphagen-yellow transition">Vision</a>
-                <a href="#academic" class="hover:text-alphagen-yellow transition">Academics</a>
-                <a href="#certifications-carousel" class="hover:text-alphagen-yellow transition">Certifications</a>
-                <a href="#expertise" class="hover:text-alphagen-yellow transition">Track Record</a>
-                <a href="#methodology" class="hover:text-alphagen-yellow transition">Pedagogy</a>
-                <a href="#admissions" class="hover:text-alphagen-yellow transition">Showcase</a>
-                <a href="#student-work" class="hover:text-alphagen-yellow transition">Projects</a>
-                <a href="#neurodivergent" class="hover:text-alphagen-yellow transition">Inclusive Learning</a>
-                <a href="#tutor-training" class="hover:text-alphagen-yellow transition">Tutor Governance</a>
-                <a href="#endorsements" class="hover:text-alphagen-yellow transition">Endorsements</a>
-                <a href="#gallery" class="hover:text-alphagen-yellow transition">Gallery</a>
-                <a href="#publications" class="hover:text-alphagen-yellow transition">Publications</a>
-            </nav>
+        <!-- Streamlined Navigation Links -->
+        <nav class="hidden md:flex items-center gap-2 text-xs font-semibold text-white/90">
+            <!-- Core Primary Links -->
+            <a href="#vision" class="px-3 py-1.5 rounded-lg hover:bg-[#32332B] hover:text-[#FFDE4D] transition">
+                About Me
+            </a>
+            <a href="#certifications-carousel" class="px-3 py-1.5 rounded-lg hover:bg-[#32332B] hover:text-[#FFDE4D] transition">
+                Credentials
+            </a>
+            <a href="#admissions" class="px-3 py-1.5 rounded-lg hover:bg-[#32332B] hover:text-[#FFDE4D] transition">
+                Showcase
+            </a>
+            <a href="#student-work" class="px-3 py-1.5 rounded-lg hover:bg-[#32332B] hover:text-[#FFDE4D] transition">
+                Student Work
+            </a>
 
-            <div class="flex items-center gap-2">
-                <a href="mailto:priyadarshini.basu13@gmail.com?subject=Inquiry%20from%20Portfolio" class="px-3.5 py-1.5 bg-alphagen-purple hover:bg-alphagen-purpleDark text-white font-semibold text-xs rounded-xl transition flex items-center gap-1.5 border border-white/20 shadow-xs">
-                    <i class="fa-solid fa-envelope text-alphagen-yellow"></i> Email Me
-                </a>
-                <a href="https://www.linkedin.com/in/priyadarshini-basu-27058a1aa/" target="_blank" rel="noopener noreferrer" class="px-3.5 py-1.5 bg-white/10 hover:bg-white/20 text-white font-medium text-xs rounded-xl transition flex items-center gap-1.5">
-                    <i class="fa-brands fa-linkedin text-alphagen-yellow"></i> LinkedIn
-                </a>
+            <!-- "More ▾" Dropdown Menu -->
+            <div class="relative" id="nav-dropdown-container">
+                <button 
+                    id="dropdown-toggle-btn"
+                    onclick="toggleNavDropdown(event)" 
+                    class="px-3 py-1.5 rounded-lg bg-[#32332B]/60 hover:bg-[#32332B] text-white hover:text-[#FFDE4D] flex items-center gap-1.5 transition border border-white/10"
+                    aria-expanded="false"
+                    aria-haspopup="true"
+                >
+                    <span>More</span>
+                    <i class="fa-solid fa-chevron-down text-[10px] text-[#FFDE4D] transition-transform duration-200" id="dropdown-chevron"></i>
+                </button>
+
+                <!-- Dropdown Menu Box -->
+                <div 
+                    id="nav-dropdown-menu" 
+                    class="hidden absolute right-0 mt-2 w-56 rounded-xl bg-[#1E1F1A] border-2 border-[#32332B] shadow-2xl py-2 z-50 text-xs backdrop-blur-lg"
+                >
+                    <a href="#academic" onclick="closeNavDropdown()" class="flex items-center gap-2.5 px-4 py-2 hover:bg-[#32332B] hover:text-[#FFDE4D] text-white/90 transition">
+                        <i class="fa-solid fa-graduation-cap text-[#FFDE4D] w-4"></i> Academic Foundations
+                    </a>
+                    <a href="#expertise" onclick="closeNavDropdown()" class="flex items-center gap-2.5 px-4 py-2 hover:bg-[#32332B] hover:text-[#FFDE4D] text-white/90 transition">
+                        <i class="fa-solid fa-briefcase text-[#FFDE4D] w-4"></i> Track Record & Experience
+                    </a>
+                    <a href="#methodology" onclick="closeNavDropdown()" class="flex items-center gap-2.5 px-4 py-2 hover:bg-[#32332B] hover:text-[#FFDE4D] text-white/90 transition">
+                        <i class="fa-solid fa-play text-[#FFDE4D] w-4"></i> Pedagogy & Methodology
+                    </a>
+                    <div class="my-1 border-t border-[#32332B]"></div>
+                    <a href="#neurodivergent" onclick="closeNavDropdown()" class="flex items-center gap-2.5 px-4 py-2 hover:bg-[#32332B] hover:text-[#FFDE4D] text-white/90 transition">
+                        <i class="fa-solid fa-shapes text-[#FFDE4D] w-4"></i> Inclusive Learning
+                    </a>
+                    <a href="#tutor-training" onclick="closeNavDropdown()" class="flex items-center gap-2.5 px-4 py-2 hover:bg-[#32332B] hover:text-[#FFDE4D] text-white/90 transition">
+                        <i class="fa-solid fa-chalkboard-user text-[#FFDE4D] w-4"></i> Tutor Governance
+                    </a>
+                    <a href="#endorsements" onclick="closeNavDropdown()" class="flex items-center gap-2.5 px-4 py-2 hover:bg-[#32332B] hover:text-[#FFDE4D] text-white/90 transition">
+                        <i class="fa-solid fa-comments text-[#FFDE4D] w-4"></i> Endorsements & Quotes
+                    </a>
+                    <a href="#gallery" onclick="closeNavDropdown()" class="flex items-center gap-2.5 px-4 py-2 hover:bg-[#32332B] hover:text-[#FFDE4D] text-white/90 transition">
+                        <i class="fa-solid fa-camera text-[#FFDE4D] w-4"></i> Image Gallery
+                    </a>
+                    <a href="#publications" onclick="closeNavDropdown()" class="flex items-center gap-2.5 px-4 py-2 hover:bg-[#32332B] hover:text-[#FFDE4D] text-white/90 transition">
+                        <i class="fa-solid fa-book-open text-[#FFDE4D] w-4"></i> Publications & Papers
+                    </a>
+                </div>
             </div>
+        </nav>
+
+        <!-- CTAs: Yellow Cyber Button -->
+        <div class="flex items-center gap-2">
+            <a href="mailto:priyadarshini.basu13@gmail.com?subject=Inquiry%20from%20Portfolio" class="px-3.5 py-1.5 bg-[#FFDE4D] hover:bg-[#FFE79A] text-[#1E1F1A] font-bold text-xs rounded-xl transition flex items-center gap-1.5 border-2 border-[#1E1F1A] shadow-xs">
+                <i class="fa-solid fa-envelope"></i> Email Me
+            </a>
+            <a href="https://www.linkedin.com/in/priyadarshini-basu-27058a1aa/" target="_blank" rel="noopener noreferrer" class="hidden sm:flex px-3.5 py-1.5 bg-white/10 hover:bg-white/20 text-white font-medium text-xs rounded-xl transition items-center gap-1.5 border border-white/10 hover:text-[#FFDE4D]">
+                <i class="fa-brands fa-linkedin text-[#FFDE4D]"></i> LinkedIn
+            </a>
+            <!-- Mobile Menu Toggle Button -->
+            <button onclick="toggleMobileNav()" class="md:hidden p-1.5 text-white hover:text-[#FFDE4D] transition text-base">
+                <i class="fa-solid fa-bars" id="mobile-menu-icon"></i>
+            </button>
         </div>
-    </header>
+    </div>
 
+    <!-- Mobile Drawer (Collapsible) -->
+    <div id="mobile-nav" class="hidden md:hidden pt-3 pb-2 border-t border-[#32332B] mt-2 space-y-1 text-xs">
+        <a href="#vision" onclick="toggleMobileNav()" class="block py-1.5 px-2 text-white hover:text-[#FFDE4D]">About Me</a>
+        <a href="#certifications-carousel" onclick="toggleMobileNav()" class="block py-1.5 px-2 text-white hover:text-[#FFDE4D]">Credentials</a>
+        <a href="#admissions" onclick="toggleMobileNav()" class="block py-1.5 px-2 text-white hover:text-[#FFDE4D]">Showcase</a>
+        <a href="#student-work" onclick="toggleMobileNav()" class="block py-1.5 px-2 text-white hover:text-[#FFDE4D]">Student Work</a>
+        <a href="#academic" onclick="toggleMobileNav()" class="block py-1.5 px-2 text-white/80 hover:text-[#FFDE4D]">Academic Foundations</a>
+        <a href="#expertise" onclick="toggleMobileNav()" class="block py-1.5 px-2 text-white/80 hover:text-[#FFDE4D]">Track Record</a>
+        <a href="#methodology" onclick="toggleMobileNav()" class="block py-1.5 px-2 text-white/80 hover:text-[#FFDE4D]">Pedagogy</a>
+        <a href="#neurodivergent" onclick="toggleMobileNav()" class="block py-1.5 px-2 text-white/80 hover:text-[#FFDE4D]">Inclusive Learning</a>
+        <a href="#tutor-training" onclick="toggleMobileNav()" class="block py-1.5 px-2 text-white/80 hover:text-[#FFDE4D]">Tutor Governance</a>
+        <a href="#endorsements" onclick="toggleMobileNav()" class="block py-1.5 px-2 text-white/80 hover:text-[#FFDE4D]">Testimonials</a>
+        <a href="#gallery" onclick="toggleMobileNav()" class="block py-1.5 px-2 text-white/80 hover:text-[#FFDE4D]">Gallery</a>
+        <a href="#publications" onclick="toggleMobileNav()" class="block py-1.5 px-2 text-white/80 hover:text-[#FFDE4D]">Publications</a>
+    </div>
+</header>
     <!-- Main Container -->
     <main class="max-w-5xl mx-auto px-4 py-8 space-y-12">
 
@@ -1714,6 +1782,46 @@
             teamSlideIndex = index;
             updateTeamView();
         }
+        // --- NAVBAR DROPDOWN & MOBILE MENU HANDLERS ---
+function toggleNavDropdown(event) {
+    event.stopPropagation();
+    const menu = document.getElementById('nav-dropdown-menu');
+    const chevron = document.getElementById('dropdown-chevron');
+    const btn = document.getElementById('dropdown-toggle-btn');
+    const isHidden = menu.classList.contains('hidden');
+    
+    if (isHidden) {
+        menu.classList.remove('hidden');
+        chevron.classList.add('rotate-180');
+        btn.setAttribute('aria-expanded', 'true');
+    } else {
+        closeNavDropdown();
+    }
+}
+
+function closeNavDropdown() {
+    const menu = document.getElementById('nav-dropdown-menu');
+    const chevron = document.getElementById('dropdown-chevron');
+    const btn = document.getElementById('dropdown-toggle-btn');
+    if (menu) menu.classList.add('hidden');
+    if (chevron) chevron.classList.remove('rotate-180');
+    if (btn) btn.setAttribute('aria-expanded', 'false');
+}
+
+function toggleMobileNav() {
+    const mobileNav = document.getElementById('mobile-nav');
+    if (mobileNav) {
+        mobileNav.classList.toggle('hidden');
+    }
+}
+
+// Close the dropdown when clicking outside
+document.addEventListener('click', function(event) {
+    const container = document.getElementById('nav-dropdown-container');
+    if (container && !container.contains(event.target)) {
+        closeNavDropdown();
+    }
+});
     </script>
 </body>
 </html>
