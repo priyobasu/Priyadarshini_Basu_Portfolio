@@ -248,6 +248,7 @@
 
     <!-- Top Sticky Executive Navigation Bar -->
     <!-- Top Sticky Executive Navigation Bar with Streamlined Menu & Dropdown -->
+<!-- Top Sticky Executive Navigation Bar with Updated Menus -->
 <header class="no-print sticky top-0 z-50 bg-[#1E1F1A]/95 backdrop-blur-md border-b-2 border-[#32332B] px-5 py-3 shadow-lg">
     <div class="max-w-6xl mx-auto flex items-center justify-between">
         <!-- Logo / Name -->
@@ -258,23 +259,30 @@
         </a>
 
         <!-- Streamlined Navigation Links -->
-        <nav class="hidden md:flex items-center gap-2 text-xs font-semibold text-white/90">
-            <!-- Core Primary Links -->
+        <nav class="hidden md:flex items-center gap-1.5 text-xs font-semibold text-white/90">
+            <!-- 01. About Me -->
             <a href="#vision" class="px-3 py-1.5 rounded-lg hover:bg-[#32332B] hover:text-[#FFDE4D] transition">
                 About Me
             </a>
+
+            <!-- 02. Credentials -->
             <a href="#certifications-carousel" class="px-3 py-1.5 rounded-lg hover:bg-[#32332B] hover:text-[#FFDE4D] transition">
                 Credentials
             </a>
+
+            <!-- 03. Student Showcase -->
             <a href="#admissions" class="px-3 py-1.5 rounded-lg hover:bg-[#32332B] hover:text-[#FFDE4D] transition">
-                Showcase
+                Student Showcase
             </a>
-            <a href="#student-work" class="px-3 py-1.5 rounded-lg hover:bg-[#32332B] hover:text-[#FFDE4D] transition">
-                Student Work
+
+            <!-- 04. Professional Services (Accent Highlight Color) -->
+            <a href="#services" class="px-3 py-1.5 rounded-lg bg-[#FFDE4D] text-[#1E1F1A] font-bold hover:bg-[#FFE79A] border border-[#FFDE4D] transition shadow-xs flex items-center gap-1.5">
+                <i class="fa-solid fa-briefcase text-[11px]"></i>
+                <span>Professional Services</span>
             </a>
 
             <!-- "More ▾" Dropdown Menu -->
-            <div class="relative" id="nav-dropdown-container">
+            <div class="relative ml-1" id="nav-dropdown-container">
                 <button 
                     id="dropdown-toggle-btn"
                     onclick="toggleNavDropdown(event)" 
@@ -295,10 +303,13 @@
                         <i class="fa-solid fa-graduation-cap text-[#FFDE4D] w-4"></i> Academic Foundations
                     </a>
                     <a href="#expertise" onclick="closeNavDropdown()" class="flex items-center gap-2.5 px-4 py-2 hover:bg-[#32332B] hover:text-[#FFDE4D] text-white/90 transition">
-                        <i class="fa-solid fa-briefcase text-[#FFDE4D] w-4"></i> Track Record & Experience
+                        <i class="fa-solid fa-building-columns text-[#FFDE4D] w-4"></i> Track Record & Experience
                     </a>
                     <a href="#methodology" onclick="closeNavDropdown()" class="flex items-center gap-2.5 px-4 py-2 hover:bg-[#32332B] hover:text-[#FFDE4D] text-white/90 transition">
                         <i class="fa-solid fa-play text-[#FFDE4D] w-4"></i> Pedagogy & Methodology
+                    </a>
+                    <a href="#student-work" onclick="closeNavDropdown()" class="flex items-center gap-2.5 px-4 py-2 hover:bg-[#32332B] hover:text-[#FFDE4D] text-white/90 transition">
+                        <i class="fa-solid fa-laptop-code text-[#FFDE4D] w-4"></i> Student Video Prototypes
                     </a>
                     <div class="my-1 border-t border-[#32332B]"></div>
                     <a href="#neurodivergent" onclick="closeNavDropdown()" class="flex items-center gap-2.5 px-4 py-2 hover:bg-[#32332B] hover:text-[#FFDE4D] text-white/90 transition">
@@ -308,19 +319,19 @@
                         <i class="fa-solid fa-chalkboard-user text-[#FFDE4D] w-4"></i> Tutor Governance
                     </a>
                     <a href="#endorsements" onclick="closeNavDropdown()" class="flex items-center gap-2.5 px-4 py-2 hover:bg-[#32332B] hover:text-[#FFDE4D] text-white/90 transition">
-                        <i class="fa-solid fa-comments text-[#FFDE4D] w-4"></i> Endorsements & Quotes
+                        <i class="fa-solid fa-comments text-[#FFDE4D] w-4"></i> Testimonials & Feedback
                     </a>
                     <a href="#gallery" onclick="closeNavDropdown()" class="flex items-center gap-2.5 px-4 py-2 hover:bg-[#32332B] hover:text-[#FFDE4D] text-white/90 transition">
                         <i class="fa-solid fa-camera text-[#FFDE4D] w-4"></i> Image Gallery
                     </a>
                     <a href="#publications" onclick="closeNavDropdown()" class="flex items-center gap-2.5 px-4 py-2 hover:bg-[#32332B] hover:text-[#FFDE4D] text-white/90 transition">
-                        <i class="fa-solid fa-book-open text-[#FFDE4D] w-4"></i> Publications & Papers
+                        <i class="fa-solid fa-book-open text-[#FFDE4D] w-4"></i> Publications
                     </a>
                 </div>
             </div>
         </nav>
 
-        <!-- CTAs: Yellow Cyber Button -->
+        <!-- CTAs -->
         <div class="flex items-center gap-2">
             <a href="mailto:priyadarshini.basu13@gmail.com?subject=Inquiry%20from%20Portfolio" class="px-3.5 py-1.5 bg-[#FFDE4D] hover:bg-[#FFE79A] text-[#1E1F1A] font-bold text-xs rounded-xl transition flex items-center gap-1.5 border-2 border-[#1E1F1A] shadow-xs">
                 <i class="fa-solid fa-envelope"></i> Email Me
@@ -339,11 +350,12 @@
     <div id="mobile-nav" class="hidden md:hidden pt-3 pb-2 border-t border-[#32332B] mt-2 space-y-1 text-xs">
         <a href="#vision" onclick="toggleMobileNav()" class="block py-1.5 px-2 text-white hover:text-[#FFDE4D]">About Me</a>
         <a href="#certifications-carousel" onclick="toggleMobileNav()" class="block py-1.5 px-2 text-white hover:text-[#FFDE4D]">Credentials</a>
-        <a href="#admissions" onclick="toggleMobileNav()" class="block py-1.5 px-2 text-white hover:text-[#FFDE4D]">Showcase</a>
-        <a href="#student-work" onclick="toggleMobileNav()" class="block py-1.5 px-2 text-white hover:text-[#FFDE4D]">Student Work</a>
+        <a href="#admissions" onclick="toggleMobileNav()" class="block py-1.5 px-2 text-white hover:text-[#FFDE4D]">Student Showcase</a>
+        <a href="#services" onclick="toggleMobileNav()" class="block py-1.5 px-2 text-[#FFDE4D] font-bold hover:underline">Professional Services</a>
         <a href="#academic" onclick="toggleMobileNav()" class="block py-1.5 px-2 text-white/80 hover:text-[#FFDE4D]">Academic Foundations</a>
         <a href="#expertise" onclick="toggleMobileNav()" class="block py-1.5 px-2 text-white/80 hover:text-[#FFDE4D]">Track Record</a>
         <a href="#methodology" onclick="toggleMobileNav()" class="block py-1.5 px-2 text-white/80 hover:text-[#FFDE4D]">Pedagogy</a>
+        <a href="#student-work" onclick="toggleMobileNav()" class="block py-1.5 px-2 text-white/80 hover:text-[#FFDE4D]">Student Video Prototypes</a>
         <a href="#neurodivergent" onclick="toggleMobileNav()" class="block py-1.5 px-2 text-white/80 hover:text-[#FFDE4D]">Inclusive Learning</a>
         <a href="#tutor-training" onclick="toggleMobileNav()" class="block py-1.5 px-2 text-white/80 hover:text-[#FFDE4D]">Tutor Governance</a>
         <a href="#endorsements" onclick="toggleMobileNav()" class="block py-1.5 px-2 text-white/80 hover:text-[#FFDE4D]">Testimonials</a>
@@ -1346,7 +1358,7 @@
                                 <span class="text-xs font-semibold text-alphagen-purple">Founder</span>
                                 <span class="text-[10px] text-alphagen-midGrey mt-0.5"><i class="fa-solid fa-building"></i> AlphaGen Learning</span>
                                 <p class="text-xs text-alphagen-darkGrey italic leading-relaxed mt-3 max-w-lg bg-white p-3 rounded-xl border border-slate-200">
-                                    "Priyadarshini's curriculum architecture and pedagogical mentorship set a benchmark across our technical faculty. Her rubrics ensured exceptional learning outcomes across all cohorts."
+                                    "I have known Priyadarshini since 2022, when she joined Alphagen Learning as a team member. What I appreciate most about her is her strong sense of ownership and responsibility, and her dedication to her profession. I have also witnessed her grow from a team member into a team leader, and she has been instrumental in executing our vision at Alphagen. Her passion for what she does is infectious, and she inspires those around her to share it."
                                 </p>
                             </div>
                         </div>
@@ -1614,49 +1626,78 @@
         <!-- ==========================================
              09. STRATEGIC OFFERINGS & DIRECT ENGAGEMENT
              ========================================== -->
-        <section class="bg-alphagen-purple text-white rounded-2xl p-6 md:p-8 shadow-md space-y-6">
-            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-white/20 pb-4">
-                <div>
-                    <span class="text-xs font-bold text-alphagen-yellow uppercase tracking-widest block mb-1">Professional Engagements</span>
-                    <h3 class="text-xl font-extrabold tracking-tight">Core Strategic Offerings</h3>
+             <section id="services" class="bg-[#1E1F1A] text-white rounded-2xl p-6 md:p-8 shadow-md space-y-6 border-2 border-[#32332B] scroll-mt-20">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-white/10 pb-5">
+                    <div>
+                        <span class="text-xs font-bold text-[#FFDE4D] uppercase tracking-widest block mb-1">Professional Engagements</span>
+                        <h3 class="text-xl md:text-2xl font-extrabold tracking-tight text-white">Types of Services & Collaborations</h3>
+                    </div>
+                    <div class="flex flex-wrap items-center gap-3">
+                        <a href="mailto:priyadarshini.basu13@gmail.com?subject=Strategic%20Engagement%20Inquiry" class="px-4 py-2 bg-[#FFDE4D] hover:bg-[#FFE79A] text-[#1E1F1A] font-bold text-xs rounded-xl shadow transition flex items-center gap-2 border-2 border-[#1E1F1A]">
+                            <i class="fa-solid fa-envelope text-sm"></i> Email Priyadarshini
+                        </a>
+                        <a href="https://www.linkedin.com/in/priyadarshini-basu-27058a1aa/" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-white/10 hover:bg-white/20 text-white font-bold text-xs rounded-xl border border-white/20 shadow transition flex items-center gap-2 hover:text-[#FFDE4D]">
+                            <i class="fa-brands fa-linkedin text-[#FFDE4D] text-sm"></i> Connect on LinkedIn
+                        </a>
+                    </div>
                 </div>
-                <div class="flex flex-wrap items-center gap-2.5">
-                    <a href="mailto:priyadarshini.basu13@gmail.com?subject=Strategic%20Engagement%20Inquiry" class="px-4 py-2 bg-alphagen-yellow hover:bg-alphagen-yellowDark text-alphagen-nearBlack font-bold text-xs rounded-xl shadow transition flex items-center gap-2">
-                        <i class="fa-solid fa-envelope text-sm"></i> Email Priyadarshini
-                    </a>
-                    <a href="https://www.linkedin.com/in/priyadarshini-basu-27058a1aa/" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-white/10 hover:bg-white/20 text-white font-bold text-xs rounded-xl border border-white/20 shadow transition flex items-center gap-2">
-                        <i class="fa-brands fa-linkedin text-alphagen-yellow text-sm"></i> Connect on LinkedIn
-                    </a>
+            
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5 text-[#1E1F1A]">
+                    
+                    <!-- Card 01 -->
+                    <div class="p-5 bg-white rounded-xl space-y-2.5 shadow-2xs border border-[#32332B] hover:border-[#FFDE4D] transition">
+                        <div class="flex items-center gap-2.5">
+                            <span class="w-7 h-7 rounded-lg bg-[#1E1F1A] text-[#FFDE4D] text-xs font-extrabold flex items-center justify-center shrink-0">01</span>
+                            <h4 class="text-sm font-bold text-[#1E1F1A]">K-12 STEM & AI Curriculum Architecture</h4>
+                        </div>
+                        <ul class="text-[12px] text-[#404048] space-y-1.5 list-disc list-inside leading-relaxed">
+                            <li><strong class="text-[#1E1F1A]">Turnkey Learning Pathways:</strong> Scratch, Python, web architecture, and physical computing.</li>
+                            <li><strong class="text-[#1E1F1A]">Emerging Tech Modules:</strong> Applied Computer Vision, Generative AI, and sensor robotics.</li>
+                            <li><strong class="text-[#1E1F1A]">Age-Adaptive Design:</strong> Project-driven curriculum built specifically for ages 7–16.</li>
+                        </ul>
+                    </div>
+            
+                    <!-- Card 02 -->
+                    <div class="p-5 bg-white rounded-xl space-y-2.5 shadow-2xs border border-[#32332B] hover:border-[#FFDE4D] transition">
+                        <div class="flex items-center gap-2.5">
+                            <span class="w-7 h-7 rounded-lg bg-[#1E1F1A] text-[#FFDE4D] text-xs font-extrabold flex items-center justify-center shrink-0">02</span>
+                            <h4 class="text-sm font-bold text-[#1E1F1A]">DSA & University CS Mentorship</h4>
+                        </div>
+                        <ul class="text-[12px] text-[#404048] space-y-1.5 list-disc list-inside leading-relaxed">
+                            <li><strong class="text-[#1E1F1A]">Capstone Project Builds:</strong> Guiding authentic prototypes from idea to live deployment.</li>
+                            <li><strong class="text-[#1E1F1A]">Portfolio Curation:</strong> Polishing GitHub repos, browser demos, and project showcases.</li>
+                            <li><strong class="text-[#1E1F1A]">Interview Preparation:</strong> Technical storytelling and viva prep for DSA and university admissions.</li>
+                        </ul>
+                    </div>
+            
+                    <!-- Card 03 -->
+                    <div class="p-5 bg-white rounded-xl space-y-2.5 shadow-2xs border border-[#32332B] hover:border-[#FFDE4D] transition">
+                        <div class="flex items-center gap-2.5">
+                            <span class="w-7 h-7 rounded-lg bg-[#1E1F1A] text-[#FFDE4D] text-xs font-extrabold flex items-center justify-center shrink-0">03</span>
+                            <h4 class="text-sm font-bold text-[#1E1F1A]">Educator Training & Quality Audits</h4>
+                        </div>
+                        <ul class="text-[12px] text-[#404048] space-y-1.5 list-disc list-inside leading-relaxed">
+                            <li><strong class="text-[#1E1F1A]">Faculty Onboarding:</strong> Training tutors on inquiry-driven coding pedagogy and student empathy.</li>
+                            <li><strong class="text-[#1E1F1A]">Platform Walkthroughs:</strong> Hands-on coaching across coding tools, hardware kits, and LMS platforms.</li>
+                            <li><strong class="text-[#1E1F1A]">Observation Audits:</strong> Standardized rubrics and actionable SOPs to guarantee consistent class quality.</li>
+                        </ul>
+                    </div>
+            
+                    <!-- Card 04 -->
+                    <div class="p-5 bg-white rounded-xl space-y-2.5 shadow-2xs border border-[#32332B] hover:border-[#FFDE4D] transition">
+                        <div class="flex items-center gap-2.5">
+                            <span class="w-7 h-7 rounded-lg bg-[#1E1F1A] text-[#FFDE4D] text-xs font-extrabold flex items-center justify-center shrink-0">04</span>
+                            <h4 class="text-sm font-bold text-[#1E1F1A]">AI-Assisted Courseware Consulting</h4>
+                        </div>
+                        <ul class="text-[12px] text-[#404048] space-y-1.5 list-disc list-inside leading-relaxed">
+                            <li><strong class="text-[#1E1F1A]">GenAI Workflow Integration:</strong> Streamlining lesson development pipelines using generative tools.</li>
+                            <li><strong class="text-[#1E1F1A]">Educational Safeguards:</strong> Preserving student reasoning, debugging skills, and conceptual depth.</li>
+                            <li><strong class="text-[#1E1F1A]">Curriculum Modernization:</strong> Aligning legacy CS syllabi with modern, AI-forward industry standards.</li>
+                        </ul>
+                    </div>
+            
                 </div>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-alphagen-nearBlack">
-                <div class="p-4 bg-white rounded-xl space-y-1.5 shadow-2xs">
-                    <span class="w-6 h-6 rounded-md bg-alphagen-purple text-alphagen-yellow text-xs font-extrabold flex items-center justify-center">01</span>
-                    <h4 class="text-xs font-bold text-alphagen-nearBlack">K-12 STEM & AI Curriculum Architecture</h4>
-                    <p class="text-[11px] text-alphagen-darkGrey leading-tight">Turnkey pathways from Scratch to Python, Computer Vision, and GenAI.</p>
-                </div>
-
-                <div class="p-4 bg-white rounded-xl space-y-1.5 shadow-2xs">
-                    <span class="w-6 h-6 rounded-md bg-alphagen-purple text-alphagen-yellow text-xs font-extrabold flex items-center justify-center">02</span>
-                    <h4 class="text-xs font-bold text-alphagen-nearBlack">DSA & University CS Mentorship</h4>
-                    <p class="text-[11px] text-alphagen-darkGrey leading-tight">Technical project builds, portfolio curation, and admissions interview prep.</p>
-                </div>
-
-                <div class="p-4 bg-white rounded-xl space-y-1.5 shadow-2xs">
-                    <span class="w-6 h-6 rounded-md bg-alphagen-purple text-alphagen-yellow text-xs font-extrabold flex items-center justify-center">03</span>
-                    <h4 class="text-xs font-bold text-alphagen-nearBlack">Educator Training & Quality Audits</h4>
-                    <p class="text-[11px] text-alphagen-darkGrey leading-tight">Faculty onboarding, observation rubrics, and academic SOP design.</p>
-                </div>
-
-                <div class="p-4 bg-white rounded-xl space-y-1.5 shadow-2xs">
-                    <span class="w-6 h-6 rounded-md bg-alphagen-purple text-alphagen-yellow text-xs font-extrabold flex items-center justify-center">04</span>
-                    <h4 class="text-xs font-bold text-alphagen-nearBlack">AI-Assisted Courseware Consulting</h4>
-                    <p class="text-[11px] text-alphagen-darkGrey leading-tight">Integrating generative AI workflows while safeguarding educational rigor.</p>
-                </div>
-            </div>
-        </section>
-
+            </section>
         <!-- Executive Footer -->
         <footer class="pt-4 pb-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between text-xs text-alphagen-midGrey gap-3">
             <div>
